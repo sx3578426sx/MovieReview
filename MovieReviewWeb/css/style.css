@@ -1,26 +1,26 @@
-.menu {
+.Menu {
     background-color: rgb(70, 70, 253);
     
     color: white;
 }
 
-.menuBtn {
+.MenuBtn {
     position: absolute;
     right: 0px;
 }
 
-#home {
+#Home {
     width: 120px;
 }
 
-.content {
+.Content {
     width: 100%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-.poster {
+.Poster {
     width: 300px;
     margin: 10px;
     padding: 10px;
@@ -29,11 +29,11 @@
     text-align: center;
 }
 
-.bottom {
+.Bottom {
     background-color: orangered;
 }
 
-.informetion {
+.Informetion {
     vertical-align: top;
     display: inline-block;
     color: white;
