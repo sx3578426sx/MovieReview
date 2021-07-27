@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>電影評什麼</title>
     <link rel="stylesheet" type="text/css" href="./css/Style.css">
     <style type="text/css">
@@ -17,6 +17,7 @@
             width: 100%;
         }
     </style>
+    <link rel="stylesheet" href="./css/bootstrap4.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/MyJavascript.js" charset="UTF-8"></script>
 
@@ -24,16 +25,17 @@
 
 <body style="margin: 0px;">
     <!-- 菜單 -->
-    <div class="Menu">
+    <div class="Menu navbar navbar-expand-lg">
         <img src="./img/Home.png" id="Home" />
         <span class="MenuBtn">
-            <button id="AddMovieBtn">新增電影</button>
-            <button id="ReviewBtn">討論區</button>
-            <button id="AboutUsBtn">關於我們</button>
-            <button>登入/註冊/登出</button>
+            <button id="AddMovieBtn" class="btn btn-outline-light">新增電影</button>
+            <button id="DiscussBtn" class="btn btn-outline-light">討論區</button>
+            <button id="AboutUsBtn" class="btn btn-outline-light">關於我們</button>
+            <button class="btn btn-outline-light">登入/註冊/登出</button>
         </span>
     </div>
     <br/>
+
     <!-- 網頁內容 -->
     <div class="Content">
         <div class="MovieWall">
@@ -63,10 +65,18 @@
         </div>
     </div>
     <br/>
+
     <!-- 聯絡資訊 -->
     <div class="Bottom">
         <div class="Informetion">
-            聯絡資訊<br/> IG　FaceBook　gmail　github
+            <h4>聯絡資訊</h4>
+            <span> 
+                <p>Instagram：<a href="https://www.instagram.com/z851772198/">Amy</a>、
+                <a href="https://www.instagram.com/you_jin_1013/">Jones</a></p>
+                <p>FaceBook：<a href="https://www.facebook.com/profile.php?id=100001411811825">Amy</a>、
+                <a href="https://www.facebook.com/jin.yo.96">Jones</a></p>
+                <p>Github：<a href="https://github.com/sx3578426sx/MovieReview">MovieReview</a></p>
+            </span>
         </div>
         <div class="Informetion">
             線上回覆時間<br/> 9:00 ~ 18:00

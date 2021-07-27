@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於我們</title>
+    <title>新增電影</title>
     <link rel="stylesheet" type="text/css" href="./css/Style.css">
-    <style type="text/css">
-        .Content img {
-            width: 250px;
-            height: 250px;
-        }
-    </style>
     <link rel="stylesheet" href="./css/bootstrap4.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/MyJavascript.js" charset="UTF-8"></script>
 </head>
-
 <body style="margin: 0px;">
     <!-- 菜單 -->
     <div class="Menu navbar navbar-expand-lg">
@@ -29,23 +22,36 @@
         </span>
     </div>
     <div class="Content">
-        <h2>開發動機</h2>
-        <p>1.練習網頁設計。</p>
-        <p>2.提供人們分享電影心得，設計這個網頁。</p>
-        <br/>
-        <h2>成員介紹</h2>
-        <div class="Poster">
-            Amy<br/>
-            <img src="./img/Amy.jpg" />
-        </div>
-        <div class="Poster">
-            Jones<br/>
-            <img src="./img/Jones.jpg" />
-        </div>
-    </div>
-    <br/>
-    <br/>
-    
+        <h3>新增電影</h3>
+        <table>
+            <tr>
+                <td>分類</td>
+                <td>
+                    <input type="checkbox" />動作
+                    <input type="checkbox" />驚悚
+                    <input type="checkbox" />奇幻
+                    <input type="checkbox" />愛情
+                    <input type="checkbox" />搞笑
+                </td>
+            </tr>
+            <tr>
+                <td>電影名稱</td>
+                <td><input type="text"/></td>
+            </tr>
+            <tr>
+                <td>圖片上傳</td>
+                <td><input type="file" ></td>
+            </tr>
+            <tr>
+                <td>電影描述</td>
+                <td><input type="text"/></td>
+            </tr>
+            <tr>
+                <td>上映時間</td>
+                <td><input type="date"/></td>
+            </tr>
+        </table>
+    </div> 
     <!-- 聯絡資訊 -->
     <div class="Bottom">
         <div class="Informetion">
@@ -63,5 +69,4 @@
         </div>
     </div>
 </body>
-
 </html>

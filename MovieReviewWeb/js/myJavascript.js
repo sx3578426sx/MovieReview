@@ -1,19 +1,21 @@
 $(function(){
     let Home = $("#Home")
     let AddMovieBtn = $("#AddMovieBtn");
-    let ReviewBtn = $("#ReviewBtn");
+    let DiscussBtn = $("#DiscussBtn");
     let AboutUsBtn = $("#AboutUsBtn");
 
     Home.on("click", function(){
         location.href = "http://127.0.0.1:8887/HomePage.html";
     })
     AddMovieBtn.on("click", function(){
-        location.href = "";
+        location.href = "http://127.0.0.1:8887/AddMovie.html";
     })
-    ReviewBtn.on("click", function(){
-        location.href = "";
+    DiscussBtn.on("click", function(){
+        location.href = "http://127.0.0.1:8887/Discuss.html";
     })
     AboutUsBtn.on("click", function(){
         location.href = "http://127.0.0.1:8887/AboutUs.html";
     })
+
+
 })
