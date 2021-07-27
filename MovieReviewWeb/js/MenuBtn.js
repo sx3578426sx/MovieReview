@@ -16,6 +16,4 @@ $(function(){
     AboutUsBtn.on("click", function(){
         location.href = "http://127.0.0.1:8887/AboutUs.html";
     })
-
-
 })
