@@ -1,5 +1,5 @@
-// MovieWall
 $(function(){
+    // MovieWall
     let LeftBtn = $("#LeftBtn");
     let RightBtn = $("#RightBtn");
     let idx = 1;
@@ -17,4 +17,18 @@ $(function(){
         }
         MovieNews.innerHTML = '<a id="M'+idx+'"><img src="./img/M'+idx+'.png" class="img-fluid" alt="近期沒有電影上映"/></a>';
     });
+    /*幻燈片，每三秒切換下一張
+    setInterval(function(){
+        idx++;
+        if(idx > 3){
+            idx = 1;
+        }
+        MovieNews.innerHTML = '<a id="M'+idx+'"><img src="./img/M'+idx+'.png" class="img-fluid" alt="近期沒有電影上映"/></a>';
+    },3000)
+    */
+
+
+    //Poster ajax
+    //img
+    //title
 })

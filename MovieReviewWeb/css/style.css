@@ -1,6 +1,6 @@
 .Menu {
-    background-color: rgb(70, 70, 253);
-    
+    /* background-color: rgb(70, 70, 253); */
+    background-color: #006CF9;
     color: white;
 }
 
@@ -51,12 +51,14 @@
 
 .Bottom {
     background-color: orangered;
+    text-align: center;
 }
 
 .Informetion {
     vertical-align: top;
     display: inline-block;
     color: white;
-    padding: 5%;
-    margin: 0 10%;
+    padding: 0 5%;
+    margin: 1%;
+    text-align: left;
 }

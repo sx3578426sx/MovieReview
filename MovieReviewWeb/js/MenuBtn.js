@@ -1,4 +1,5 @@
 $(function(){
+    //Menu按鈕
     let Home = $("#Home")
     let AddMovieBtn = $("#AddMovieBtn");
     let DiscussBtn = $("#DiscussBtn");
