@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增電影</title>
+    <link rel="stylesheet" type="text/css" href="./css/Style.css">
+    <link rel="stylesheet" href="./css/bootstrap4.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/MenuBtn.js" charset="UTF-8"></script>
+</head>
+<body>
+    <!-- 菜單 -->
+    <div class="Menu navbar navbar-expand-lg">
+        <img src="./img/Home.png" id="Home" />
+        <span class="MenuBtn">
+            <button id="AddMovieBtn" class="btn btn-outline-light">新增電影</button>
+            <button id="DiscussBtn" class="btn btn-outline-light">討論區</button>
+            <button id="AboutUsBtn" class="btn btn-outline-light">關於我們</button>
+            <button class="btn btn-outline-light">登入/註冊/登出</button>
+        </span>
+    </div>
+    <div class="Content">
+        <h3>新增電影</h3>
+        <table>
+            <tr>
+                <td>分類</td>
+                <td>
+                    <input type="checkbox" />動作
+                    <input type="checkbox" />驚悚
+                    <input type="checkbox" />奇幻
+                    <input type="checkbox" />愛情
+                    <input type="checkbox" />搞笑
+                </td>
+            </tr>
+            <tr>
+                <td>電影名稱</td>
+                <td><input type="text"/></td>
+            </tr>
+            <tr>
+                <td>圖片上傳</td>
+                <td><input type="file" ></td>
+            </tr>
+            <tr>
+                <td>電影描述</td>
+                <td><input type="text"/></td>
+            </tr>
+            <tr>
+                <td>上映時間</td>
+                <td><input type="date"/></td>
+            </tr>
+        </table>
+    </div> 
+    
+    <!-- 聯絡資訊 -->
+    <div class="Footer">
+        <div class="Informetion">
+            <h4>聯絡資訊</h4>
+            <p>Instagram：<a href="https://www.instagram.com/z851772198/" target="_blank">Amy</a>、
+            <a href="https://www.instagram.com/you_jin_1013/" target="_blank">Jones</a></p>
+            <p>FaceBook：<a href="https://www.facebook.com/profile.php?id=100001411811825" target="_blank">Amy</a>、
+            <a href="https://www.facebook.com/jin.yo.96" target="_blank">Jones</a></p>
+            <p>Github：<a href="https://github.com/sx3578426sx/MovieReview" target="_blank">MovieReview</a></p>
+        </div>
+        <div class="Informetion">
+            <h4>線上回覆時間</h4>
+            <p> 9:00 ~ 18:00</p>
+        </div>
+    </div>
+</body>
+</html>

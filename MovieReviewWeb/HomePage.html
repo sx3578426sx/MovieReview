@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>電影評什麼</title>
+    <link rel="stylesheet" type="text/css" href="./css/Style.css">
+    <style type="text/css">
+        .MovieWall {
+            padding: 1%;
+        }
+
+        .MovieWall img{
+            width: 80%;
+        }
+        
+        .Poster img {
+            width: 100%;
+        }
+
+        .bi-chevron-left{
+            text-align: left;
+        }
+        
+        svg{
+            width: 5%;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/bootstrap4.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/MenuBtn.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="./js/HomePage.js" charset="UTF-8"></script>
+</head>
+
+<body>
+    <!-- 菜單 -->
+    <div class="Menu navbar navbar-expand-lg">
+        <img src="./img/Home.png" id="Home" />
+        <span class="MenuBtn">
+            <button id="AddMovieBtn" class="btn btn-outline-light">新增電影</button>
+            <button id="DiscussBtn" class="btn btn-outline-light">討論區</button>
+            <button id="AboutUsBtn" class="btn btn-outline-light">關於我們</button>
+            <button class="btn btn-outline-light">登入/註冊/登出</button>
+        </span>
+    </div>
+    <br/>
+
+    <!-- 網頁內容 -->
+    <div class="Content">
+        <!-- 顯示熱門電影幻燈片，可以切換上下一張 -->
+        <div class="MovieWall">
+            <span id="LeftBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                </svg>
+            </span>
+            <a id="MovieNews"><img src="./img/M1.png" class="img-fluid" alt="近期沒有電影上映"/></a>
+            <span id="RightBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                </svg>
+            </span>
+        </div>
+        <br/>
+        <div class="Poster">
+            <div><img src="./img/ex.png" /></div>
+            <div>
+                <a>電影名稱</a><br/>
+                <a>推薦分數</a><br/> 
+                <a>5.0</a>
+            </div>
+        </div>
+        <div class="Poster">
+            <div><img src="./img/ex.png" /></div>
+            <div>
+                <a>電影名稱</a><br/>
+                <a>推薦分數</a><br/> 
+                <a>5.0</a>
+            </div>
+        </div>
+        <div class="Poster">
+            <div><img src="./img/ex.png" /></div>
+            <div>
+                <a>電影名稱</a><br/>
+                <a>推薦分數</a><br/> 
+                <a>5.0</a>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <!-- 聯絡資訊 -->
+    <div class="Footer">
+        <div class="Informetion">
+            <h4>聯絡資訊</h4>
+            <p>Instagram：<a href="https://www.instagram.com/z851772198/" target="_blank">Amy</a>、
+            <a href="https://www.instagram.com/you_jin_1013/" target="_blank">Jones</a></p>
+            <p>FaceBook：<a href="https://www.facebook.com/profile.php?id=100001411811825" target="_blank">Amy</a>、
+            <a href="https://www.facebook.com/jin.yo.96" target="_blank">Jones</a></p>
+            <p>Github：<a href="https://github.com/sx3578426sx/MovieReview" target="_blank">MovieReview</a></p>
+        </div>
+        <div class="Informetion">
+            <h4>線上回覆時間</h4>
+            <p> 9:00 ~ 18:00</p>
+        </div>
+    </div>
+</body>
+
+</html>

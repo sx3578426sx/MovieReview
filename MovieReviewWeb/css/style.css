@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    }
+/* 使用flex與flex-grow撐滿footer以上的區塊方式，達到footer置底。 */
+body {
+    display: flex; /*使物件依序排列*/
+    flex-direction: column; /*使物件垂直排列*/
+}
+.Menu {
+    /* background-color: rgb(70, 70, 253); */
+    background-color: #006CF9;
+    color: white;
+}
+
+.MenuBtn {
+    position: absolute;
+    right: 10px;
+}
+
+@media screen and (max-width:600px) {
+    .MenuBtn {
+        position: relative;
+        right: 10px;
+    }
+}
+
+#Home {
+    width: 120px;
+}
+
+.Content {
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+    flex-grow: 1;
+}
+
+.Content table{
+    text-align: center;
+    margin: 20px auto;
+    border: 2px solid black;
+}
+
+.Content td{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.Poster {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+}
+
+.Footer {
+    background-color: orangered;
+    text-align: center;
+}
+
+.Informetion {
+    vertical-align: top;
+    display: inline-block;
+    color: white;
+    padding: 0 5%;
+    margin: 1%;
+    text-align: left;
+}
