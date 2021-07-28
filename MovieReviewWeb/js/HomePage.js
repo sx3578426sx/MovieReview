@@ -34,7 +34,7 @@ $(function(){
         url:"http://127.0.0.1:8887/js/MovieList.json",
         dataType:"json",
         success: function(){
-            console.log(y);
+            
         }
     })
 })
