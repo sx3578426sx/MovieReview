@@ -1,3 +1,12 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    }
+/* 使用flex與flex-grow撐滿footer以上的區塊方式，達到footer置底。 */
+body {
+    display: flex; /*使物件依序排列*/
+    flex-direction: column; /*使物件垂直排列*/
+}
 .Menu {
     /* background-color: rgb(70, 70, 253); */
     background-color: #006CF9;
@@ -24,7 +33,7 @@
     width: 100%;
     text-align: center;
     margin: 20px auto;
-
+    flex-grow: 1;
 }
 
 .Content table{
@@ -49,7 +58,7 @@
     text-align: center;
 }
 
-.Bottom {
+.Footer {
     background-color: orangered;
     text-align: center;
 }
