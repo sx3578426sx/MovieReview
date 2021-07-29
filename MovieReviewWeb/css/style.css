@@ -1,3 +1,4 @@
+/* html,body網頁介面 */
 html, body {
     height: 100%;
     margin: 0;
@@ -7,41 +8,52 @@ body {
     display: flex; /*使物件依序排列*/
     flex-direction: column; /*使物件垂直排列*/
 }
+
+/* 登入與註冊畫面 */
+#SignFace{
+    border: 2px solid seagreen;
+    background-color: gainsboro;
+    text-align: center;
+    position: fixed;
+    top: 200px;
+    left: 37%;
+    width: 26%;
+    padding: 2%;
+    z-index:1;
+    display: none;
+}
+#SignClose{
+    cursor: pointer;
+}
+
+
+/* 菜單 */
 .Menu {
     /* background-color: rgb(70, 70, 253); */
     background-color: #006CF9;
     color: white;
 }
-
 .MenuBtn {
     position: absolute;
     right: 10px;
-}
-
-@media screen and (max-width:600px) {
-    .MenuBtn {
-        position: relative;
-        right: 10px;
-    }
 }
 
 #Home {
     width: 120px;
 }
 
+/* 網頁內容 */
 .Content {
     width: 100%;
     text-align: center;
     margin: 20px auto;
-    flex-grow: 1;
+    flex-grow: 1;   /* flex-grow: 1 讓內容撐大到可以讓頁尾置底 */
 }
-
 .Content table{
     text-align: center;
     margin: 20px auto;
     border: 2px solid black;
 }
-
 .Content td{
     text-align: center;
     margin: 10px;
@@ -49,6 +61,15 @@ body {
     border: 2px solid black;
 }
 
+/* 電影牆 */
+.MovieWall {
+    padding: 1%;
+}
+.MovieWall img{
+    width: 50%;
+}
+
+/* 前三大熱門評論推薦 */
 .Poster {
     width: 300px;
     margin: 10px;
@@ -57,12 +78,15 @@ body {
     display: inline-block;
     text-align: center;
 }
+.Poster img {
+    width: 100%;
+}
 
+/* 頁尾 */
 .Footer {
     background-color: orangered;
     text-align: center;
 }
-
 .Informetion {
     vertical-align: top;
     display: inline-block;
@@ -70,4 +94,26 @@ body {
     padding: 0 5%;
     margin: 1%;
     text-align: left;
+}
+
+/* 手機介面 */
+@media screen and (max-width:600px) {
+    /* 菜單 */
+    .MenuBtn {
+        position: relative;
+        right: 10px;
+    }
+    /* 登入 */
+    #SignFace{
+        border: 2px solid seagreen;
+        background-color: gainsboro;
+        text-align: center;
+        position: fixed;
+        top: 200px;
+        left: auto;
+        width: 100%;
+        padding: 2%;
+        z-index:1;
+        display: none;
+    }
 }
