@@ -20,9 +20,13 @@ $(function(){
     })
     
 
-    // 登入/註冊/登出
-    let SignBtn = $("#SignBtn");
-    SignBtn.on("click", function(){
-        $("#SignFace").toggle();
-    })
 })
+
+// 登入/註冊/登出
+function SignBtn(){
+    $("#SignFace").toggle();
+}
+
+function SignClose(){
+    $("#SignFace").css("display","none");
+}
