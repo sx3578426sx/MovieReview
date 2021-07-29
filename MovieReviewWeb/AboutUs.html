@@ -25,13 +25,35 @@
             <button id="AddMovieBtn" class="btn btn-outline-light">新增電影</button>
             <button id="DiscussBtn" class="btn btn-outline-light">討論區</button>
             <button id="AboutUsBtn" class="btn btn-outline-light">關於我們</button>
-            <button class="btn btn-outline-light">登入/註冊/登出</button>
+            <button onclick="SignBtn();" class="btn btn-outline-light">登入/註冊/登出</button>
         </span>
     </div>
+
+    <!-- 登入與註冊介面 -->
+    <div id="SignFace">
+        <div class="row">
+            <span class="offset-11" id="SignClose" onclick="SignClose()">X</span>
+        </div>
+        <h1>登入</h1>
+        <p>帳號 <input type="text" placeholder="請輸入帳號"></p>
+        <p>密碼 <input type="password" placeholder="請輸入密碼"></p>
+        <div>
+            <button type="submit" id="SignIn" name="SignIn">登入</button>
+            <button type="button" id="SingUp" name="SingUp">註冊</button>
+        </div>
+    </div>
+
+    <!-- 網頁內容 -->
     <div class="Content">
         <h2>開發動機</h2>
-        <p>1.練習網頁設計。</p>
-        <p>2.提供人們分享電影心得，設計這個網頁。</p>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="text-left col-4">
+                <p>1.練習網頁設計。</p>
+                <p>2.提供人們分享電影心得，設計這個網頁。</p>
+            </div>
+            <div class="col-4"></div>
+        </div>
         <br/>
         <h2>成員介紹</h2>
         <div class="Poster">
