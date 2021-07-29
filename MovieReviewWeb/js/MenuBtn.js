@@ -5,6 +5,7 @@ $(function(){
     let DiscussBtn = $("#DiscussBtn");
     let AboutUsBtn = $("#AboutUsBtn");
 
+
     Home.on("click", function(){
         location.href = "http://127.0.0.1:8887/HomePage.html";
     })
@@ -16,5 +17,12 @@ $(function(){
     })
     AboutUsBtn.on("click", function(){
         location.href = "http://127.0.0.1:8887/AboutUs.html";
+    })
+    
+
+    // 登入/註冊/登出
+    let SignBtn = $("#SignBtn");
+    SignBtn.on("click", function(){
+        $("#SignFace").toggle();
     })
 })
