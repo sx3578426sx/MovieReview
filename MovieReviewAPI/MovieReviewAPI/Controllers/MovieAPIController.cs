@@ -1,4 +1,5 @@
 ﻿using MovieReviewAPI.Models.BLL;
+using MovieReviewAPI.Models.VM.Common;
 using MovieReviewAPI.Models.VM.Movie;
 using System;
 using System.Collections.Generic;
@@ -54,7 +55,7 @@ namespace MovieReviewAPI.Controllers
         /// <returns></returns>
         public async Task<IHttpActionResult> GetLastMovieData(int count = 3)
         {
-            List<HttpPostedFileBase> result = await Task.Run(() => _movieBLO.GetLastMovieData(count));
+            List<MovieDetailVM> result = await Task.Run(() => _movieBLO.GetLastMovieData(count));
             
             return this.Ok(result);
         }
@@ -75,9 +76,12 @@ namespace MovieReviewAPI.Controllers
         /// <summary>
         /// 新增電影
         /// </summary>
-        /// <param name="value"></param>
-        public void Post([FromBody]string value)
+        /// <param name="model">新增資料</param>
+        public async Task<IHttpActionResult> Create([FromBody]MovieDetailVM model)
         {
+            ApiResponseVM result = await Task.Run(() => _movieBLO.Create(model));
+
+            return this.Ok(result);
         }
 
         // PUT: api/Movie/5

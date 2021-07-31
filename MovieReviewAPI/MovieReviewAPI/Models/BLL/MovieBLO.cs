@@ -1,5 +1,7 @@
 ﻿using MovieReviewAPI.Models.DAL;
 using MovieReviewAPI.Models.Entity;
+using MovieReviewAPI.Models.Extensions;
+using MovieReviewAPI.Models.VM.Common;
 using MovieReviewAPI.Models.VM.Movie;
 using System;
 using System.Collections.Generic;
@@ -65,11 +67,74 @@ namespace MovieReviewAPI.Models.BLL
         /// </summary>
         /// <param name="count">數量</param>
         /// <returns></returns>
-        public List<HttpPostedFileBase> GetLastMovieData(int count)
+        public List<MovieDetailVM> GetLastMovieData(int count)
         {
-            List<HttpPostedFileBase> result = new List<HttpPostedFileBase>();
+            List<MovieDetailVM> result = new List<MovieDetailVM>();
 
-            //TODO:檔案處理
+            result = _movieDAO.GetLastMovieData(count);
+
+            // 取得圖片
+            foreach(var item in result)
+            {
+                var imgTemp = _context.MovieImageFile.FirstOrDefault(x => x.MovieId == item.Id);
+
+                if(imgTemp != null && imgTemp.ImageFile.Length > 0)
+                {
+                    item.ImageFile = StreamExtension.GetFileStream(imgTemp.FileId, imgTemp.ImageFile);
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 新增電影
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public ApiResponseVM Create(MovieDetailVM model)
+        {
+            ApiResponseVM result = new ApiResponseVM()
+            {
+                IsSuccess = true
+            };
+
+            #region 防呆(檢查是否必填)
+            if (string.IsNullOrEmpty(model.MovieName))
+            {
+                result.IsSuccess = false;
+                result.ErrorMsg += "電影名稱必填\n";
+            }
+            #endregion
+
+            Guid movieId = Guid.NewGuid();
+
+            Movies data = new Movies();
+            data.Id = movieId;
+            data.MovieName = model.MovieName;
+            data.Category = model.Category;
+            data.MovieDescription = model.MovieDescription;
+            data.ReleaseDate = model.ReleaseDate;
+            _context.Movies.Add(data);
+
+            // 若有上傳圖片再另存圖檔
+            if(model.ImageFile != null)
+            {
+                MovieImageFile imageFile = new MovieImageFile();
+                imageFile.MovieId = movieId;
+                imageFile.FileId = Guid.NewGuid();
+                imageFile.ImageFile = model.UploadFile.InputStream.StreamToBytes();
+                imageFile.ImageFileName = model.UploadFile.FileName;
+                imageFile.FileType = model.UploadFile.ContentType;
+                _context.MovieImageFile.Add(imageFile);
+            }
+
+            result.IsSuccess = _context.SaveChanges() > 0;
+
+            if (!result.IsSuccess)
+            {
+                result.ErrorMsg = string.Join(",", _context.GetValidationErrors());
+            }
 
             return result;
         }

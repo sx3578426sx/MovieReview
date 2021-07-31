@@ -23,6 +23,9 @@ namespace MovieReviewAPI.Models.Entity
         [StringLength(200)]
         public string Category { get; set; }
 
+        [MaxLength]
+        public string MovieDescription { get; set; }
+
         [Column(TypeName = "date")]
         public DateTime? ReleaseDate { get; set; }
 

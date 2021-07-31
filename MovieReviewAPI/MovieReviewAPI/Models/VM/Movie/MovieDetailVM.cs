@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -29,9 +30,19 @@ namespace MovieReviewAPI.Models.VM.Movie
         public DateTime? ReleaseDate { get; set; }
 
         /// <summary>
-        /// 圖片
+        /// 電影描述
         /// </summary>
-        public HttpPostedFileBase ImageFile { get; set; }
+        public string MovieDescription { get; set; }
+
+        /// <summary>
+        /// 顯示的圖片
+        /// </summary>
+        public FileStream ImageFile { get; set; }
+
+        /// <summary>
+        /// 上傳的圖片
+        /// </summary>
+        public HttpPostedFileBase UploadFile { get; set; }
 
         /// <summary>
         /// 推薦分數

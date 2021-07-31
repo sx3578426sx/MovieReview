@@ -19,6 +19,9 @@ namespace MovieReviewAPI.Models.Entity
         [StringLength(50)]
         public string ImageFileName { get; set; }
 
+        [StringLength(50)]
+        public string FileType { get; set; }
+
         public virtual Movies Movies { get; set; }
     }
 }

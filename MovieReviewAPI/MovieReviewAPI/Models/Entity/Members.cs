@@ -20,7 +20,7 @@ namespace MovieReviewAPI.Models.Entity
 
         [Required]
         [StringLength(100)]
-        public string Passward { get; set; }
+        public string Password { get; set; }
 
         [Required]
         [StringLength(20)]

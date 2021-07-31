@@ -15,6 +15,7 @@ namespace MovieReviewAPI.Models.DAL
     public class MovieDAO
     {
         private readonly string connextionString = ConfigurationManager.ConnectionStrings["MovieReviewDB"].ToString();
+        
         /// <summary>
         /// 取得熱門討論的電影
         /// </summary>
@@ -27,22 +28,44 @@ namespace MovieReviewAPI.Models.DAL
             using (var conn = new SqlConnection(connextionString))
             {
                 string sql = @"
-SELECT TOP @TakeCount mc.MovieId AS Id,
+SELECT mc.MovieId AS Id,
        m.MovieName,
        m.ReleaseDate,
        m.Category,
        COUNT(mc.MovieId) AS ReviewCount
 FROM Movies m
 LEFT JOIN MovieComments mc ON m.Id = mc.MovieId
-Group BY mc.MovieId
+Group BY mc.MovieId,m.MovieName,
+       m.ReleaseDate,
+       m.Category
 ORDER BY COUNT(mc.MovieId)";
-                object obj = new
-                {
-                    TakeCount = count
-                };
 
-                // TODO:驗證
-                result = conn.Query<MovieDetailVM>(sql, obj).ToList();
+                result = conn.Query<MovieDetailVM>(sql).Take(count).ToList();
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 取得最近上映的電影
+        /// </summary>
+        /// <param name="count">數量</param>
+        /// <returns></returns>
+        public List<MovieDetailVM> GetLastMovieData(int count)
+        {
+            var result = new List<MovieDetailVM>();
+
+            using (var conn = new SqlConnection(connextionString))
+            {
+                string sql = @"
+SELECT m.Id,
+       m.MovieName,
+       m.ReleaseDate,
+       m.Category
+FROM Movies m
+ORDER BY ReleaseDate DESC";
+
+                result = conn.Query<MovieDetailVM>(sql).Take(count).ToList();
             }
 
             return result;
