@@ -28,17 +28,13 @@ namespace MovieReviewAPI.Models.DAL
             using (var conn = new SqlConnection(connextionString))
             {
                 string sql = @"
-SELECT mc.MovieId AS Id,
+SELECT m.Id,
        m.MovieName,
        m.ReleaseDate,
        m.Category,
-       COUNT(mc.MovieId) AS ReviewCount
+       (SELECT COUNT(MovieId) FROM MovieComments mc WHERE m.Id = mc.MovieId) AS ReviewCount
 FROM Movies m
-LEFT JOIN MovieComments mc ON m.Id = mc.MovieId
-Group BY mc.MovieId,m.MovieName,
-       m.ReleaseDate,
-       m.Category
-ORDER BY COUNT(mc.MovieId)";
+ORDER BY ReviewCount";
 
                 result = conn.Query<MovieDetailVM>(sql).Take(count).ToList();
             }

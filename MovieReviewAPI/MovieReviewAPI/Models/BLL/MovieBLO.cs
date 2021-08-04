@@ -52,7 +52,8 @@ namespace MovieReviewAPI.Models.BLL
                 //TODO:圖片處理
 
                 // 推薦分數
-                result.ReviewScore = _context.MovieComments.Where(x => x.MovieId == result.Id).Select(x => x.ReviewScore).Average();
+                var ReviewScoreList = _context.MovieComments.Where(x => x.MovieId == result.Id).Select(x => x.ReviewScore).ToList();
+                result.ReviewScore = ReviewScoreList.Count > 0 ? ReviewScoreList.Average() : 0;
             }
             else
             {
@@ -118,7 +119,7 @@ namespace MovieReviewAPI.Models.BLL
             _context.Movies.Add(data);
 
             // 若有上傳圖片再另存圖檔
-            if(model.ImageFile != null)
+            if(model.UploadFile != null)
             {
                 MovieImageFile imageFile = new MovieImageFile();
                 imageFile.MovieId = movieId;

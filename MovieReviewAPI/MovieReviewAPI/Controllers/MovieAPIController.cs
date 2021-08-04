@@ -25,16 +25,6 @@ namespace MovieReviewAPI.Controllers
             _movieBLO = new MovieBLO();
         }
 
-        // GET: api/Movie
-        /// <summary>
-        /// 電影查詢
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
         // GET: api/Movie/5
         /// <summary>
         /// 取得電影明細
@@ -43,9 +33,17 @@ namespace MovieReviewAPI.Controllers
         /// <returns></returns>
         public async Task<IHttpActionResult> Get(Guid id)
         {
-            var result = await Task.Run(() => _movieBLO.GetMovieDetail(id));
+            try
+            {
+                var result = await Task.Run(() => _movieBLO.GetMovieDetail(id));
 
-            return Json(result);
+                return Json(result);
+            }
+            catch (Exception ex)
+            {
+                // TODO: 紀錄LOG
+                return this.InternalServerError(ex);
+            }
         }
 
         /// <summary>
@@ -55,9 +53,17 @@ namespace MovieReviewAPI.Controllers
         /// <returns></returns>
         public async Task<IHttpActionResult> GetLastMovieData(int count = 3)
         {
-            List<MovieDetailVM> result = await Task.Run(() => _movieBLO.GetLastMovieData(count));
-            
-            return this.Ok(result);
+            try
+            {
+                List<MovieDetailVM> result = await Task.Run(() => _movieBLO.GetLastMovieData(count));
+
+                return this.Ok(result);
+            }
+            catch (Exception ex)
+            {
+                // TODO: 紀錄LOG
+                return this.InternalServerError(ex);
+            }
         }
 
         /// <summary>
@@ -67,9 +73,17 @@ namespace MovieReviewAPI.Controllers
         /// <returns></returns>
         public async Task<IHttpActionResult> GetHotReviewMovieData(int count = 3)
         {
-            List<MovieDetailVM> result = await Task.Run(() => _movieBLO.GetHotReviewMovieData(count));
+            try
+            {
+                List<MovieDetailVM> result = await Task.Run(() => _movieBLO.GetHotReviewMovieData(count));
 
-            return this.Ok(result); 
+                return this.Ok(result);
+            }
+            catch (Exception ex)
+            {
+                // TODO: 紀錄LOG
+                return this.InternalServerError(ex);
+            }
         }
 
         // POST: api/Movie
@@ -77,30 +91,49 @@ namespace MovieReviewAPI.Controllers
         /// 新增電影
         /// </summary>
         /// <param name="model">新增資料</param>
+        [HttpPost]
         public async Task<IHttpActionResult> Create([FromBody]MovieDetailVM model)
         {
-            ApiResponseVM result = await Task.Run(() => _movieBLO.Create(model));
+            try
+            {
+                ApiResponseVM result = await Task.Run(() => _movieBLO.Create(model));
 
-            return this.Ok(result);
+                return this.Ok(result);
+            }
+            catch (Exception ex)
+            {
+                // TODO: 紀錄LOG
+                return this.InternalServerError(ex);
+            }
         }
 
-        // PUT: api/Movie/5
-        /// <summary>
-        /// 更新電影明細
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="value"></param>
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        //// GET: api/Movie
+        ///// <summary>
+        ///// 電影查詢
+        ///// </summary>
+        ///// <returns></returns>
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
-        // DELETE: api/Movie/5
-        /// <summary>
-        /// 刪除電影
-        /// </summary>
-        /// <param name="id"></param>
-        public void Delete(int id)
-        {
-        }
+        //// PUT: api/Movie/5
+        ///// <summary>
+        ///// 更新電影明細
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <param name="value"></param>
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
+
+        //// DELETE: api/Movie/5
+        ///// <summary>
+        ///// 刪除電影
+        ///// </summary>
+        ///// <param name="id"></param>
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

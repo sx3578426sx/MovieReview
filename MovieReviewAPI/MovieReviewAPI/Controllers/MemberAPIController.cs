@@ -27,42 +27,50 @@ namespace MovieReviewAPI.Controllers
         }
 
         /// <summary>
-        /// 取得最近上映的電影
+        /// 註冊
         /// </summary>
-        /// <param name="count">數量</param>
+        /// <param name="model">資料</param>
         /// <returns></returns>
-        public async Task<IHttpActionResult> GetLastMovieData(RegisterVM model)
+        public async Task<IHttpActionResult> Register(RegisterVM model)
         {
-            ApiResponseVM result = await Task.Run(() => _memberBLO.Register(model));
+            try
+            {
+                ApiResponseVM result = await Task.Run(() => _memberBLO.Register(model));
 
-            return this.Ok(result);
+                return this.Ok(result);
+            }
+            catch (Exception ex)
+            {
+                // TODO: 紀錄LOG
+                return this.InternalServerError(ex);
+            }
         }
 
-        // GET: api/MemberAPI
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        //// GET: api/MemberAPI
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
-        // GET: api/MemberAPI/5
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //// GET: api/MemberAPI/5
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
-        // POST: api/MemberAPI
-        public void Post([FromBody]string value)
-        {
-        }
+        //// POST: api/MemberAPI
+        //public void Post([FromBody]string value)
+        //{
+        //}
 
-        // PUT: api/MemberAPI/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        //// PUT: api/MemberAPI/5
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
 
-        // DELETE: api/Member/5
-        public void Delete(int id)
-        {
-        }
+        //// DELETE: api/Member/5
+        //public void Delete(int id)
+        //{
+        //}
     }
 }
