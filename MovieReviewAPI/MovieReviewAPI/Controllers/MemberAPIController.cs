@@ -14,14 +14,14 @@ namespace MovieReviewAPI.Controllers
     /// <summary>
     /// 會員
     /// </summary>
-    public class MemberController : ApiController
+    public class MemberAPIController : ApiController
     {
         private readonly MemberBLO _memberBLO;
 
         /// <summary>
         /// 初始化
         /// </summary>
-        public MemberController()
+        public MemberAPIController()
         {
             _memberBLO = new MemberBLO();
         }
@@ -38,24 +38,24 @@ namespace MovieReviewAPI.Controllers
             return this.Ok(result);
         }
 
-        // GET: api/Member
+        // GET: api/MemberAPI
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Member/5
+        // GET: api/MemberAPI/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/Member
+        // POST: api/MemberAPI
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT: api/Member/5
+        // PUT: api/MemberAPI/5
         public void Put(int id, [FromBody]string value)
         {
         }
