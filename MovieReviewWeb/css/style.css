@@ -40,6 +40,7 @@ body {
 
 #Home {
     width: 120px;
+    cursor: pointer;
 }
 
 /* 網頁內容 */
@@ -67,19 +68,6 @@ body {
 }
 .MovieWall img{
     width: 50%;
-}
-
-/* 前三大熱門評論推薦 */
-.Poster {
-    width: 300px;
-    margin: 10px;
-    padding: 10px;
-    vertical-align: top;
-    display: inline-block;
-    text-align: center;
-}
-.Poster img {
-    width: 100%;
 }
 
 /* 頁尾 */
