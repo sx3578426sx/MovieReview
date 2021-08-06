@@ -38,8 +38,8 @@
             <span class="offset-11" id="SignClose" onclick="SignClose()">X</span>
         </div>
         <h1>登入</h1>
-        <p>帳號 <input type="text" placeholder="請輸入帳號"></p>
-        <p>密碼 <input type="password" placeholder="請輸入密碼"></p>
+        <div>帳號 <input type="text" placeholder="請輸入帳號"></div>
+        <div>密碼 <input type="password" placeholder="請輸入密碼"></div>
         <div>
             <button type="submit" id="SignIn" name="SignIn">登入</button>
             <button type="button" id="SingUp" name="SingUp">註冊</button>
@@ -62,37 +62,12 @@
             </span>
         </div>
         <br/>
-        <div>
-            <div class="Container">
+        <div class="container">
             <div class="row">
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-10">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div><img src="./img/ex.png" /></div>
-                            <div>'
-                            <a>電影名稱</a><br/>
-                            <a>推薦分數</a><br/>
-                            <a>5.0</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div><img src="./img/ex.png" /></div>
-                            <div>'
-                            <a>電影名稱</a><br/>
-                            <a>推薦分數</a><br/>
-                            <a>5.0</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div><img src="./img/ex.png" /></div>
-                            <div>'
-                            <a>電影名稱</a><br/>
-                            <a>推薦分數</a><br/>
-                            <a>5.0</a>
-                            </div>
-                        </div>
+                    <div class="row" id="Poster">
                     </div>
                 </div>
                 <div class="col-md-1">
@@ -107,32 +82,32 @@
     <div class="Footer">
         <div class="Informetion">
             <h4>聯絡資訊</h4>
-            <p>Instagram：<a href="https://www.instagram.com/z851772198/" target="_blank">Amy</a>、
-            <a href="https://www.instagram.com/you_jin_1013/" target="_blank">Jones</a></p>
-            <p>FaceBook：<a href="https://www.facebook.com/profile.php?id=100001411811825" target="_blank">Amy</a>、
-            <a href="https://www.facebook.com/jin.yo.96" target="_blank">Jones</a></p>
-            <p>Github：<a href="https://github.com/sx3578426sx/MovieReview" target="_blank">MovieReview</a></p>
+            <div>Instagram：<a href="https://www.instagram.com/z851772198/" target="_blank">Amy</a>、
+            <a href="https://www.instagram.com/you_jin_1013/" target="_blank">Jones</a></div>
+            <div>FaceBook：<a href="https://www.facebook.com/profile.php?id=100001411811825" target="_blank">Amy</a>、
+            <a href="https://www.facebook.com/jin.yo.96" target="_blank">Jones</a></div>
+            <div>Github：<a href="https://github.com/sx3578426sx/MovieReview" target="_blank">MovieReview</a></div>
         </div>
         <div class="Informetion">
             <h4>線上回覆時間</h4>
-            <p> 9:00 ~ 18:00</p>
+            <div> 9:00 ~ 18:00</div>
         </div>
     </div>
 </body>
 <script>
     $.ajax({
-        url:"",
+        url:"https://run.mocky.io/v3/b1bc4464-4199-41d3-a5f8-8bfa62c74cbd",
         type:"get",
         dataType:"json",
         success: function(){
         // 成功取得熱門評論回傳結果然後顯示在頁面上
             var html = "";
             for(var i = 0;i < 3; i++){
-                html += '<div class="col-4">'
+                html += '<div class="col-md-4">'
                 html += '<div><img src="./img/ex.png" /></div>'
                 html += '<div>'
                 html += '<a>電影名稱</a><br/>'
-                html += '<a>推薦分數</a><br/> '
+                html += '<a>推薦分數</a><br/>'
                 html += '<a>5.0</a>'
                 html += '</div>'
                 html += '</div>'
