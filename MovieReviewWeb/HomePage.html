@@ -6,73 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>電影評什麼</title>
     <link rel="stylesheet" type="text/css" href="./css/Style.css">
-    <link rel="stylesheet" href="./css/bootstrap4.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/MenuBtn.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="./js/HomePage.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="./css/bootstrap4.min.css">
+
 </head>
 
 <body>
     <!-- 菜單 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <a class="navbar-brand" href="./HomePage.html"><img src="./img/Home.png" /></a>
+            <div class="page-header text-center text-light">
+                <h1>電影評什麼</h1>
+            </div>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link text-light btn btn-outline-light" href="./AddMovie.html">新增電影<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" href="./Discuss.html">討論區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" href="./AboutUs.html">關於我們</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" onclick="SignInBtn();" href="javascript:;">登入</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" href="./SignUp.html">註冊</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" onclick="SignOutBtn();" href="javascript:;">登出</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="container-fluid">
-        <div class="row Menu navbar navbar-expand-lg">
-            <div class="col-md-2">
-                <img src="./img/Home.png" id="Home" />
+        <!-- 登入與註冊介面 -->
+        <div class="row" id="SignFace">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-10">
+                    </div>
+                    <div class="col-md-2">
+                        <span id="SignClose" onclick="SignClose()">X</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>登入</h3>
+                        <div>帳號 <input type="text" placeholder="請輸入帳號"></div>
+                        <div>密碼 <input type="password" placeholder="請輸入密碼"></div>
+                        <div>
+                            <button type="submit" id="SignIn" name="SignIn">登入</button>
+                            <button type="button" id="SingUp" name="SingUp">註冊</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-7 page-header text-center"><h1>電影評什麼</h1></div>
-            <div class="col-md-3">
-                <button id="AddMovieBtn" class="btn btn-outline-light">新增電影</button>
-                <button id="DiscussBtn" class="btn btn-outline-light">討論區</button>
-                <button id="AboutUsBtn" class="btn btn-outline-light">關於我們</button>
-                <button onclick="SignUpBtn();" class="btn btn-info">註冊</button>
-                <button onclick="SignInBtn();" class="btn btn-danger">登入</button>
-            </div>
         </div>
-    <br/>
-
-    <!-- 登入與註冊介面 -->
-    <div id="SignFace">
-        <div class="row">
-            <span class="offset-11" id="SignClose" onclick="SignClose()">X</span>
-        </div>
-        <h1>登入</h1>
-        <div>帳號 <input type="text" placeholder="請輸入帳號"></div>
-        <div>密碼 <input type="password" placeholder="請輸入密碼"></div>
-        <div>
-            <button type="submit" id="SignIn" name="SignIn">登入</button>
-            <button type="button" id="SingUp" name="SingUp">註冊</button>
-        </div>
-    </div>
-    <!-- 網頁內容 -->
-    <div class="Content">
-        <!-- 顯示熱門電影幻燈片，可以切換上下一張 -->
-        <div class="MovieWall">
-            <span id="LeftBtn">
+        <!-- 網頁內容 -->
+        <div class="Content">
+            <!-- 顯示熱門電影幻燈片，可以切換上下一張 -->
+            <div class="MovieWall">
+                <span id="LeftBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
                 <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
                 </svg>
             </span>
-            <a id="MovieNews"><img src="./img/M1.png" alt="近期沒有電影上映"/></a>
-            <span id="RightBtn">
+                <a id="MovieNews"><img src="./img/M1.png" alt="近期沒有電影上映" /></a>
+                <span id="RightBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
                 <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                 </svg>
             </span>
-        </div>
-        <br/>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-10">
-                    <div class="row" id="Poster">
+            </div>
+            <br/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row" id="Poster">
+                        </div>
+                    </div>
+                    <div class="col-md-1">
                     </div>
                 </div>
-                <div class="col-md-1">
-                </div>
-            </div>
             </div>
         </div>
     </div>
@@ -83,9 +105,9 @@
         <div class="Informetion">
             <h4>聯絡資訊</h4>
             <div>Instagram：<a href="https://www.instagram.com/z851772198/" target="_blank">Amy</a>、
-            <a href="https://www.instagram.com/you_jin_1013/" target="_blank">Jones</a></div>
+                <a href="https://www.instagram.com/you_jin_1013/" target="_blank">Jones</a></div>
             <div>FaceBook：<a href="https://www.facebook.com/profile.php?id=100001411811825" target="_blank">Amy</a>、
-            <a href="https://www.facebook.com/jin.yo.96" target="_blank">Jones</a></div>
+                <a href="https://www.facebook.com/jin.yo.96" target="_blank">Jones</a></div>
             <div>Github：<a href="https://github.com/sx3578426sx/MovieReview" target="_blank">MovieReview</a></div>
         </div>
         <div class="Informetion">
@@ -94,7 +116,10 @@
         </div>
     </div>
 </body>
-<script>
+<script type="text/javascript" src="./js/Common.js" charset="UTF-8"></script>
+
+<!-- <script>
+    
     $.ajax({
         url:"https://run.mocky.io/v3/b1bc4464-4199-41d3-a5f8-8bfa62c74cbd",
         type:"get",
@@ -115,5 +140,6 @@
             $("#Poster").html(html);
            },
     })
-</script>
+</script> -->
+
 </html>
