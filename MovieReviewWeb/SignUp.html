@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電影評什麼-註冊會員</title>
+    <link rel="stylesheet" type="text/css" href="./css/Style.css">
+    <link rel="stylesheet" href="./css/bootstrap4.min.css">
+</head>
+
+<body>
+    <!-- 菜單 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <a class="navbar-brand" href="./HomePage.html"><img src="./img/Home.png" /></a>
+            <div class="page-header text-center text-light">
+                <h1>電影評什麼</h1>
+            </div>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link text-light btn btn-outline-light" href="./AddMovie.html">新增電影<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" href="./Discuss.html">討論區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" href="./AboutUs.html">關於我們</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" onclick="SignInBtn();" href="javascript:;">登入</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" onclick="SignUpBtn();" href="javascript:;">註冊</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" onclick="SignOutBtn();" href="javascript:;">登出</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <!-- 登入與註冊介面 -->
+        <div class="row" id="SignFace">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-10">
+                    </div>
+                    <div class="col-md-2">
+                        <span id="SignClose" onclick="SignClose()">X</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>登入</h3>
+                        <div>帳號 <input type="text" placeholder="請輸入帳號"></div>
+                        <div>密碼 <input type="password" placeholder="請輸入密碼"></div>
+                        <div>
+                            <button type="submit" id="SignIn" name="SignIn">登入</button>
+                            <button type="button" id="SingUp" name="SingUp">註冊</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-center">註冊會員</h3>
+                <form role="form">
+                    <div class="form-group">
+                        <label for="NickName" class="require">暱稱</label>
+                        <input type="text" class="form-control" id="NickName" />
+                    </div>
+                    <div class="form-group">
+                        <label for="SignUpAccount">帳號</label>
+                        <input type="text" class="form-control" id="SignUpAccount" />
+                    </div>
+                    <div class="form-group">
+                        <label for="SignUpPassword1">密碼</label>
+                        <input type="password" class="form-control" id="SignUpPassword1" />
+                    </div>
+                    <div class="form-group">
+                        <label for="SignUpPassword2">確認密碼</label>
+                        <input type="password" class="form-control" id="SignUpPassword2" />
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="ChackPass()">提交</button>
+                </form>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./js/Common.js" charset="UTF-8"></script>
+<script>
+    function ChackPass() {
+        let NickName = $("#NickName").val();
+        let SignUpAccount = $("#SignUpAccount").val();
+        let SignUpPassword1 = $("#SignUpPassword1").val();
+        let SignUpPassword2 = $("#SignUpPassword2").val();
+        if (NickName == "" || SignUpAccount == "" || SignUpPassword1 == "") {
+            alert("有資料尚未填入");
+        } else if (SignUpPassword1 !== SignUpPassword2) {
+            alert("密碼不同，請重新輸入。");
+        } else {
+            $.ajax({
+                url: "http://localhost:57799/api/MemberAPI/Register",
+                type: "post",
+                data: {
+                    "NickName": NickName,
+                    "Account": SignUpAccount,
+                    "Password": SignUpPassword1
+                },
+                dataType: "json",
+                success: function(data) {
+                    if (data.IsSuccess) {
+                        alert("註冊成功");
+                        location.href = "./HomePage.html";
+                    } else {
+                        alert(data.ErrorMsg);
+                    }
+                },
+                error: function(error) {
+                    alert("呼叫失敗");
+                    console.log("error");
+                }
+            })
+        }
+    }
+</script>
+
+</html>
