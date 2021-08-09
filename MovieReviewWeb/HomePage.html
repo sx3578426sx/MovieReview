@@ -7,21 +7,41 @@
     <title>電影評什麼</title>
     <link rel="stylesheet" type="text/css" href="./css/Style.css">
     <link rel="stylesheet" href="./css/bootstrap4.min.css">
-
+    
 </head>
 
 <body>
     <!-- 菜單 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">新增電影</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">討論區</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">關於我們</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">登入</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">註冊</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">登出</a>
+        </li>
+      </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <a class="navbar-brand" href="./HomePage.html"><img src="./img/Home.png" /></a>
+            <a class="navbar-brand" href="./HomePage.html"><img src="./img/Home.png" style="width: 70%;"/></a>
             <div class="page-header text-center text-light">
                 <h1>電影評什麼</h1>
             </div>
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <ul class="nav justify-content-end">
                 <li class="nav-item active">
                     <a class="nav-link text-light btn btn-outline-light" href="./AddMovie.html">新增電影<span class="sr-only">(current)</span></a>
                 </li>
@@ -101,7 +121,7 @@
     <br/>
 
     <!-- 聯絡資訊 -->
-    <div class="Footer">
+    <div class="Footer navbar-static-bottom">
         <div class="Informetion">
             <h4>聯絡資訊</h4>
             <div>Instagram：<a href="https://www.instagram.com/z851772198/" target="_blank">Amy</a>、
@@ -116,7 +136,11 @@
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./js/Common.js" charset="UTF-8"></script>
+
 
 <!-- <script>
     
