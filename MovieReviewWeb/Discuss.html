@@ -7,32 +7,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>討論區</title>
     <link rel="stylesheet" type="text/css" href="./css/Style.css">
-    <link rel="stylesheet" href="./css/bootstrap4.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/bootstrap4.min.css">
 </head>
 
 <body>
-    <!-- 菜單 -->
-    <div class="Menu navbar navbar-expand-lg">
-        <img src="./img/Home.png" id="Home" />
-        <span class="MenuBtn">
-            <button id="AddMovieBtn" class="btn btn-outline-light">新增電影</button>
-            <button id="DiscussBtn" class="btn btn-outline-light">討論區</button>
-            <button id="AboutUsBtn" class="btn btn-outline-light">關於我們</button>
-            <button onclick="SignBtn();" class="btn btn-outline-light">登入/註冊/登出</button>
-        </span>
-    </div>
-
-    <!-- 登入與註冊介面 -->
-    <div id="SignFace">
-        <div class="row">
-            <span class="offset-11" id="SignClose" onclick="SignClose()">X</span>
+    <!-- 頂端列菜單 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            <a class="navbar-brand" href="./HomePage.html"><img src="./img/Home.png" style="width: 70%;" /></a>
         </div>
-        <h1>登入</h1>
-        <p>帳號 <input type="text" placeholder="請輸入帳號"></p>
-        <p>密碼 <input type="password" placeholder="請輸入密碼"></p>
+        <div class="collapse navbar-collapse page-header text-light">
+            <h1>電影評什麼</h1>
+        </div>
         <div>
-            <button type="submit" id="SignIn" name="SignIn">登入</button>
-            <button type="button" id="SingUp" name="SingUp">註冊</button>
+            <ul class="collapse navbar-collapse nav justify-content-end" id="navbarTogglerDemo03">
+                <li class="nav-item active">
+                    <a class="nav-link text-light btn btn-outline-light" href="./AddMovie.html">新增電影</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" href="./Discuss.html">討論區</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" href="./AboutUs.html">關於我們</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" onclick="SignInBtn();" href="javascript:;">登入</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" href="./SignUp.html">註冊</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-outline-light" onclick="SignOutBtn();" href="javascript:;">登出</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 登入彈跳視窗 -->
+    <div class="container-fluid">
+        <div class="row" id="SignFace">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-10">
+                    </div>
+                    <div class="col-md-2">
+                        <span id="SignClose" onclick="SignClose()">X</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <h2>登入</h2>
+                        </div>
+                        <label>帳號<input type="text" placeholder="請輸入帳號"></label>
+                        <label>密碼 <input type="password" placeholder="請輸入密碼"></label>
+                        <br/>
+                        <div>
+                            <a type="button" class="btn btn-info">登入</a>
+                            <a type="button" class="btn btn-danger" href="./SignUp.html">註冊</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -42,24 +81,24 @@
     </div>
 
     <!-- 聯絡資訊 -->
-    <div class="Footer">
-        <div class="Informetion">
+    <div class="Footer fixed-bottom ">
+        <div class="Informetion ">
             <h4>聯絡資訊</h4>
-            <p>Instagram：<a href="https://www.instagram.com/z851772198/" target="_blank">Amy</a>、
-                <a href="https://www.instagram.com/you_jin_1013/" target="_blank">Jones</a></p>
-            <p>FaceBook：<a href="https://www.facebook.com/profile.php?id=100001411811825" target="_blank">Amy</a>、
-                <a href="https://www.facebook.com/jin.yo.96" target="_blank">Jones</a></p>
-            <p>Github：<a href="https://github.com/sx3578426sx/MovieReview" target="_blank">MovieReview</a></p>
+            <div>Instagram：<a href="https://www.instagram.com/z851772198/ " target="_blank ">Amy</a>、
+                <a href="https://www.instagram.com/you_jin_1013/ " target="_blank ">Jones</a></div>
+            <div>FaceBook：<a href="https://www.facebook.com/profile.php?id=100001411811825 " target="_blank ">Amy</a>、
+                <a href="https://www.facebook.com/jin.yo.96 " target="_blank ">Jones</a></div>
+            <div>Github：<a href="https://github.com/sx3578426sx/MovieReview " target="_blank ">MovieReview</a></div>
         </div>
-        <div class="Informetion">
+        <div class="Informetion ">
             <h4>線上回覆時間</h4>
-            <p> 9:00 ~ 18:00</p>
+            <div> 9:00 ~ 18:00</div>
         </div>
     </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-<script type="text/javascript" src="./js/Common.js" charset="UTF-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js " integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut " crossorigin="anonymous "></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js " integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k " crossorigin="anonymous "></script>
+<script type="text/javascript " src="./js/Common.js " charset="UTF-8 "></script>
 
 </html>
