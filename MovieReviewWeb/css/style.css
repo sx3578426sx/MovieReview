@@ -1,16 +1,25 @@
 /* html,body網頁介面 */
-html, body {
+
+html,
+body {
     height: 100%;
     margin: 0;
-    }
-/* 使用flex與flex-grow撐滿footer以上的區塊方式，達到footer置底。 */
-body {
-    display: flex; /*使物件依序排列*/
-    flex-direction: column; /*使物件垂直排列*/
 }
 
+
+/* 使用flex與flex-grow撐滿footer以上的區塊方式，達到footer置底。 */
+
+body {
+    display: flex;
+    /*使物件依序排列*/
+    flex-direction: column;
+    /*使物件垂直排列*/
+}
+
+
 /* 登入與註冊畫面 */
-#SignFace{
+
+#SignFace {
     border: 2px solid seagreen;
     background-color: gainsboro;
     text-align: center;
@@ -19,20 +28,23 @@ body {
     left: 37%;
     width: 26%;
     padding: 2%;
-    z-index:1;
+    z-index: 1;
     display: none;
 }
-#SignClose{
+
+#SignClose {
     cursor: pointer;
 }
 
 
 /* 菜單 */
+
 .Menu {
     /* background-color: rgb(70, 70, 253); */
     background-color: #006CF9;
     color: white;
 }
+
 .MenuBtn {
     position: absolute;
     right: 10px;
@@ -43,38 +55,38 @@ body {
     cursor: pointer;
 }
 
+
 /* 網頁內容 */
+
 .Content {
     width: 100%;
     text-align: center;
     margin: 20px auto;
-    flex-grow: 1;   /* flex-grow: 1 讓內容撐大到可以讓頁尾置底 */
+    flex-grow: 1;
+    /* flex-grow: 1 讓內容撐大到可以讓頁尾置底 */
 }
-.Content table{
+
+.Content table {
     text-align: center;
     margin: 20px auto;
     border: 2px solid black;
 }
-.Content td{
+
+.Content td {
     text-align: center;
     margin: 10px;
     padding: 10px;
     border: 2px solid black;
 }
 
-/* 電影牆 */
-.MovieWall {
-    padding: 1%;
-}
-.MovieWall img{
-    width: 50%;
-}
 
 /* 頁尾 */
+
 .Footer {
     background-color: orangered;
     text-align: center;
 }
+
 .Informetion {
     vertical-align: top;
     display: inline-block;
@@ -84,7 +96,9 @@ body {
     text-align: left;
 }
 
+
 /* 手機介面 */
+
 @media screen and (max-width:600px) {
     /* 菜單 */
     .MenuBtn {
@@ -92,7 +106,7 @@ body {
         right: 10px;
     }
     /* 登入 */
-    #SignFace{
+    #SignFace {
         border: 2px solid seagreen;
         background-color: gainsboro;
         text-align: center;
@@ -101,7 +115,7 @@ body {
         left: auto;
         width: 100%;
         padding: 2%;
-        z-index:1;
+        z-index: 1;
         display: none;
     }
 }

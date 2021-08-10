@@ -10,19 +10,21 @@
 </head>
 
 <body>
-    <!-- 菜單 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <!-- 頂端列菜單 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <a class="navbar-brand" href="./HomePage.html"><img src="./img/Home.png" /></a>
-            <div class="page-header text-center text-light">
-                <h1>電影評什麼</h1>
-            </div>
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <div class="collapse navbar-collapse">
+            <a class="navbar-brand" href="./HomePage.html"><img src="./img/Home.png" style="width: 70%;" /></a>
+        </div>
+        <div class="collapse navbar-collapse page-header text-light">
+            <h1>電影評什麼</h1>
+        </div>
+        <div>
+            <ul class="collapse navbar-collapse nav justify-content-end" id="navbarTogglerDemo03">
                 <li class="nav-item active">
-                    <a class="nav-link text-light btn btn-outline-light" href="./AddMovie.html">新增電影<span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-light btn btn-outline-light" href="./AddMovie.html">新增電影</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light btn btn-outline-light" href="./Discuss.html">討論區</a>
@@ -34,7 +36,7 @@
                     <a class="nav-link text-light btn btn-outline-light" onclick="SignInBtn();" href="javascript:;">登入</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light btn btn-outline-light" onclick="SignUpBtn();" href="javascript:;">註冊</a>
+                    <a class="nav-link text-light btn btn-outline-light" href="./SignUp.html">註冊</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light btn btn-outline-light" onclick="SignOutBtn();" href="javascript:;">登出</a>
@@ -42,8 +44,9 @@
             </ul>
         </div>
     </nav>
+
+    <!-- 登入彈跳視窗 -->
     <div class="container-fluid">
-        <!-- 登入與註冊介面 -->
         <div class="row" id="SignFace">
             <div class="col-md-12">
                 <div class="row">
@@ -55,45 +58,66 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>登入</h3>
-                        <div>帳號 <input type="text" placeholder="請輸入帳號"></div>
-                        <div>密碼 <input type="password" placeholder="請輸入密碼"></div>
                         <div>
-                            <button type="submit" id="SignIn" name="SignIn">登入</button>
-                            <button type="button" id="SingUp" name="SingUp">註冊</button>
+                            <h2>登入</h2>
+                        </div>
+                        <label>帳號<input type="text" placeholder="請輸入帳號"></label>
+                        <label>密碼 <input type="password" placeholder="請輸入密碼"></label>
+                        <br/>
+                        <div>
+                            <a type="button" class="btn btn-info">登入</a>
+                            <a type="button" class="btn btn-danger" href="./SignUp.html">註冊</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-center">註冊會員</h3>
-                <form role="form">
-                    <div class="form-group">
-                        <label for="NickName" class="require">暱稱</label>
-                        <input type="text" class="form-control" id="NickName" />
-                    </div>
-                    <div class="form-group">
-                        <label for="SignUpAccount">帳號</label>
-                        <input type="text" class="form-control" id="SignUpAccount" />
-                    </div>
-                    <div class="form-group">
-                        <label for="SignUpPassword1">密碼</label>
-                        <input type="password" class="form-control" id="SignUpPassword1" />
-                    </div>
-                    <div class="form-group">
-                        <label for="SignUpPassword2">確認密碼</label>
-                        <input type="password" class="form-control" id="SignUpPassword2" />
-                    </div>
-                    <button type="button" class="btn btn-primary" onclick="ChackPass()">提交</button>
-                </form>
-            </div>
-            <div class="col-md-3">
-            </div>
+    <!-- 註冊會員資料 -->
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">註冊會員</h3>
+            <form role="form">
+                <div class="form-group">
+                    <label for="NickName" class="require">暱稱</label>
+                    <input type="text" class="form-control" id="NickName" />
+                </div>
+                <div class="form-group">
+                    <label for="SignUpAccount">帳號</label>
+                    <input type="text" class="form-control" id="SignUpAccount" />
+                </div>
+                <div class="form-group">
+                    <label for="SignUpPassword1">密碼</label>
+                    <input type="password" class="form-control" id="SignUpPassword1" />
+                </div>
+                <div class="form-group">
+                    <label for="SignUpPassword2">確認密碼</label>
+                    <input type="password" class="form-control" id="SignUpPassword2" />
+                </div>
+                <button type="button" class="btn btn-primary" onclick="ChackPass()">提交</button>
+            </form>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    </div>
+
+    <!-- 聯絡資訊 -->
+    <div class="Footer fixed-bottom ">
+        <div class="Informetion ">
+            <h4>聯絡資訊</h4>
+            <div>Instagram：<a href="https://www.instagram.com/z851772198/ " target="_blank ">Amy</a>、
+                <a href="https://www.instagram.com/you_jin_1013/ " target="_blank ">Jones</a></div>
+            <div>FaceBook：<a href="https://www.facebook.com/profile.php?id=100001411811825 " target="_blank ">Amy</a>、
+                <a href="https://www.facebook.com/jin.yo.96 " target="_blank ">Jones</a></div>
+            <div>Github：<a href="https://github.com/sx3578426sx/MovieReview " target="_blank ">MovieReview</a></div>
+        </div>
+        <div class="Informetion ">
+            <h4>線上回覆時間</h4>
+            <div> 9:00 ~ 18:00</div>
         </div>
     </div>
 </body>
