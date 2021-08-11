@@ -38,7 +38,7 @@ $(function() {
         //     }
         // })
     })
-    // 登入/註冊/登出
+    // 登入彈跳視窗
 function SignInBtn() {
     $("#SignFace").toggle();
 }
@@ -47,6 +47,12 @@ function SignClose() {
     $("#SignFace").css("display", "none");
 }
 
+    // 註冊頁面跳轉
 function SignUpBtn() {
     location.href = "./SignUp.html";
 }
+
+function HistoryBack(){
+    window.history.go(-1);
+}
+
