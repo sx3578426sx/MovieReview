@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <botton onclick="checkA1()">a1打勾</botton>
+    <div>
+        <input type="radio" id="a1" name="a" value="1">
+        <label for="a1">a1</label>
+    </div>
+    <div>
+        <input type="radio" id="a2" name="a" value="2">
+        <label for="a2">a2</label>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+
+<script>
+    // 取radio的a群組有打勾的DOM元素
+    var a = $("input[name='a']:checked");
+    var a1 = $("#a1");
+
+    function checkA1() {
+        a.prop("checked", false);
+    }
+
+    // todo:
+    //     (checkbox、 radio、 input(text)、 textarea、 select、 file)
+    // 用JS做以下事情
+    // 1. 要能取到輸入值或選取值
+    // 2. 要能夠預設輸入值或選取值
+    // 3. 設定或取消disabled(讓選項禁止輸入)
+    // 4. 設定一個按鈕， 點選後要清空所有值或選取所有值
+</script>
+
+</html>
