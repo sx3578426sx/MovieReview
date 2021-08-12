@@ -9,19 +9,31 @@
 </head>
 
 <body>
-    <botton onclick="checkA1()">a1打勾</botton>
+    <!-- Console印出name="a"裡面有打勾的值 -->
+    <botton onclick="checkA1()">開F12</botton>
     <div>
-        <input type="radio" id="a1" name="a" value="1">
-        <label for="a1">a1</label>
+        <input type="radio" id="Radio1" name="RedioGroup" value="R1">
+        <label for="Redio1">Redio1</label>
     </div>
     <div>
-        <input type="radio" id="a2" name="a" value="2">
-        <label for="a2">a2</label>
+        <input type="radio" id="Radio2" name="RedioGroup" value="R2">
+        <label for="Redio2">Redio2</label>
+    </div>
+    <div>
+        <input type="checkbox" id="Check1" name="CheckboxGroup" value="C1">
+        <label for="Check1">Check1</label>
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
 
 <script>
+    // todo:(checkbox、 radio、 input(text)、 textarea、 select、 file)
+    // 用JS做以下事情
+    // 1. 要能取到輸入值或選取值
+    // 2. 要能夠預設輸入值或選取值
+    // 3. 設定或取消disabled(讓選項禁止輸入)
+    // 4. 設定一個按鈕， 點選後要清空所有值或選取所有值
+
     // 取radio的a群組有打勾的DOM元素
     var a = $("input[name='a']:checked");
     var a1 = $("#a1");
@@ -30,13 +42,7 @@
         a.prop("checked", false);
     }
 
-    // todo:
-    //     (checkbox、 radio、 input(text)、 textarea、 select、 file)
-    // 用JS做以下事情
-    // 1. 要能取到輸入值或選取值
-    // 2. 要能夠預設輸入值或選取值
-    // 3. 設定或取消disabled(讓選項禁止輸入)
-    // 4. 設定一個按鈕， 點選後要清空所有值或選取所有值
+   
 </script>
 
 </html>
