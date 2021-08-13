@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text</title>
+</head>
+
+<body>
+    <input type="button" onclick="AlertText()" value="顯示文字">
+    <input type="button" onclick="Clear()" value="清空"><br/>
+    <label for="CardID">身分證</label>
+    <input type="text" id="CardID" name="TextAll" placeholder="請輸入身分證"><br/>
+    <label for="Phone">電　話</label>
+    <input type="text" id="Phone" name="TextAll" placeholder="請輸入電話"><br/>
+    <label for="NoText">身分為</label>
+    <input type="text" id="NoText">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script>
+        // 取到輸入值
+        function AlertText() {
+            alert("身分證:" + $("#CardID").val());
+            alert("電話:" + $("#Phone").val());
+        }
+
+        // 預設輸入值
+        $("#NoText").val("訪客");
+
+        // 設定或取消disabled(讓選項禁止選取)
+        $("#NoText").prop("disabled", true);
+
+        // 設定一個按鈕， 點選後要清空所有值或選取所有值
+        function Clear() {
+            $("input[name='TextAll']").val("");
+        }
+    </script>
+</body>
+
+</html>

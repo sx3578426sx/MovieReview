@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+
+<body>
+    <div>
+        <input type="button" onclick="Sex()" value="性別">
+        <input type="button" onclick="Clear()" value="清空"><br/>
+        <select name="Sex" id="SexList">
+            <option value="">請選擇性別</option>
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+        <select name="Sex" id="NoSexList">
+            <option value="">請選擇性別</option>
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script>
+        // 取到選取值
+        function Sex() {
+            var Sex = $("#SexList > option");
+            for (var i = 0; i < Sex.length; i++) {
+                console.log($(Sex[i]).val());
+            }
+        }
+
+        // 預設選取值
+        $("#SexList").val("");
+
+        // 設定或取消disabled(讓選項禁止選取)
+        $("#NoSexList").prop("disabled", true);
+
+        // 設定一個按鈕， 點選後要清空所有值或選取所有值
+        function Clear() {
+            $("#SexList").val("");
+        }
+    </script>
+</body>
+
+</html>

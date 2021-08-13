@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textarea</title>
+</head>
+
+<body>
+    <input type="button" onclick="ShowText()" value="顯示文字">
+    <input type="button" onclick="Clear()" value="清空"><br/>
+    <label for="Discuss">留言板</label><br/>
+    <textarea name="TextarexAll" id="Discuss" cols="30" rows="10"></textarea>
+    <textarea name="TextarexAll" id="NoDiscuss" cols="20" rows="3"></textarea>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script>
+        // 取到輸入值
+        function ShowText() {
+            alert($("#Discuss").val());
+        }
+
+        // 預設輸入值
+        $("#NoDiscuss").val("請在左欄輸入留言");
+
+        // 設定或取消disabled(讓選項禁止選取)
+        $("#NoDiscuss").prop("disabled", true);
+
+        // 設定一個按鈕， 點選後要清空所有值或選取所有值
+        function Clear() {
+            $("#Discuss").val("");
+        }
+    </script>
+</body>
+
+</html>

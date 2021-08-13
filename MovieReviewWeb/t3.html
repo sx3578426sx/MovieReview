@@ -10,15 +10,27 @@
 
 <body>
     <!-- Console印出name="a"裡面有打勾的值 -->
-    <botton onclick="checkA1()">開F12</botton>
+    <input type="button" onclick="ClearAll()" value="清空">
+    <!-- Text -->
+    <div>
+        <h3>Text</h3>
+        <input type="text" id="Text1" name="TextGroup" value="T1">
+        <label for="Text1">Check1</label>
+        <input type="text" id="Text2" name="TextGroup" value="T2">
+        <label for="Text2">Check1</label>
+    </div>
+
+    <!-- Radio -->
     <div>
         <h3>Radio</h3>
-        <input type="radio" id="Radio1" name="RedioGroup" value="R1">
+        <input type="radio" id="Radio1" name="RadioGroup" value="R1">
         <label for="Radio1">Radio1</label>
-        <input type="radio" id="Radio2" name="RedioGroup" value="R2">
+        <input type="radio" id="Radio2" name="RadioGroup" value="R2">
         <label for="Radio2">Radio2</label>
     </div>
     <hr/>
+
+    <!-- Checkbox -->
     <div>
         <h3>Checkbox</h3>
         <input type="checkbox" id="Check1" name="CheckboxGroup" value="C1">
@@ -27,20 +39,16 @@
         <label for="Check2">Check2</label>
     </div>
     <hr/>
-    <div>
-        <h3>text</h3>
-        <input type="text" id="Text1" name="TextGroup" value="T1">
-        <label for="Text1">Check1</label>
-        <input type="text" id="Text2" name="TextGroup" value="T2">
-        <label for="Text2">Check1</label>
-    </div>
-    <hr/>
+
+    <!-- textarea -->
     <div>
         <h3>textarea</h3>
         <textarea name="TextareaGroup" id="Textarea1" cols="30" rows="10"></textarea>
         <textarea name="TextareaGroup" id="Textarea2" cols="30" rows="10"></textarea>
     </div>
     <hr/>
+
+    <!-- Select -->
     <div>
         <h3>Select</h3>
         <select id="Select1" name="SelectGroup">
@@ -57,6 +65,8 @@
         </select>
     </div>
     <hr/>
+
+    <!-- File -->
     <div>
         <h3>File</h3>
         <input type="file" id="File1" name="FileGroup">
@@ -73,15 +83,10 @@
     // 3. 設定或取消disabled(讓選項禁止輸入)
     // 4. 設定一個按鈕， 點選後要清空所有值或選取所有值
 
-    // 取radio的a群組有打勾的DOM元素
-    var a = $("input[name='a']:checked");
-    var a1 = $("#a1");
-
-    function checkA1() {
-        a.prop("checked", false);
-    }
-
-   
+    //一般radio input取value語法：
+    $("#Radio1").val();
+    var RadioGroup = $("input[name='RadioGroup']:checked").val();
+    RadioGroup;
 </script>
 
 </html>
