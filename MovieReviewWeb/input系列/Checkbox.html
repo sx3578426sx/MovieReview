@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+</head>
+
+<body>
+    <div>
+        <input type="button" onclick="Hobbits()" value="興趣">
+        <input type="button" onclick="Clear()" value="清空"><br/>
+        <input type="checkbox" id="Swim" name="Hobbit" value="游泳">
+        <label for="Swim">游泳</label>
+        <input type="checkbox" id="Movie" name="Hobbit" value="電影">
+        <label for="Movie">電影</label>
+        <input type="checkbox" id="Eat" name="Hobbit" value="吃東西">
+        <label for="Eat">吃東西</label>
+        <input type="checkbox" id="Other" name="Hobbit" value="其他">
+        <label for="Other">其他</label>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script>
+        // 取到選取值
+        function Hobbits() {
+            var Hobbit = $("input[name='Hobbit']:checked"); //此為JS
+            for (var i = 0; i < Hobbit.length; i++) {
+                console.log($(Hobbit[i]).val()); //要用$包住改為jQuery，才能用val()
+            }
+        }
+
+        // 預設選取值
+        $("#Eat").prop("checked", true);
+
+        // 設定或取消disabled(讓選項禁止選取)
+        $("#Other").prop("disabled", true);
+
+        // 設定一個按鈕， 點選後要清空所有值或選取所有值
+        function Clear() {
+            $("input[name='Hobbit']").prop("checked", false);
+        }
+    </script>
+</body>
+
+</html>

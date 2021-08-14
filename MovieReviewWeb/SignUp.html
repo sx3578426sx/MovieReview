@@ -4,13 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於我們</title>
-    <style type="text/css">
-        .Content img {
-            width: 250px;
-            height: 250px;
-        }
-    </style>
+    <title>電影評什麼-註冊會員</title>
     <link rel="stylesheet" type="text/css" href="./css/Style.css">
     <link rel="stylesheet" href="./css/bootstrap4.min.css">
 </head>
@@ -80,37 +74,40 @@
         </div>
     </div>
 
-    <!-- 網頁內容 -->
-    <div class="container-fluid">
-        <h2 class="text-center">開發動機</h2>
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="text-left col-4">
-                <h5>1.練習網頁設計。</h5>
-                <h5>2.提供人們分享電影心得，設計這個網頁。</h5>
-            </div>
-            <div class="col-4"></div>
+    <!-- 註冊會員資料 -->
+    <div class="row">
+        <div class="col-md-3">
         </div>
-        <br/>
-        <h2 class="text-center">成員介紹</h2>
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-3 text-center">
-                <h3>Amy</h3><br/>
-                <div><img src="./img/Amy.jpg" width="50%" /></div>
-            </div>
-            <div class="col-3 text-center">
-                <h3>Jones</h3><br/>
-                <div><img src="./img/Jones.jpg" width="50%" /></div>
-            </div>
-            <div class="col-3"></div>
+        <div class="col-md-6">
+            <h3 class="text-center">註冊會員</h3>
+            <form role="form">
+                <div class="form-group">
+                    <label for="NickName" class="require">暱稱</label>
+                    <input type="text" class="form-control" id="NickName" />
+                </div>
+                <div class="form-group">
+                    <label for="SignUpAccount">帳號</label>
+                    <input type="text" class="form-control" id="SignUpAccount" />
+                </div>
+                <div class="form-group">
+                    <label for="SignUpPassword1">密碼</label>
+                    <input type="password" class="form-control" id="SignUpPassword1" />
+                </div>
+                <div class="form-group">
+                    <label for="SignUpPassword2">確認密碼</label>
+                    <input type="password" class="form-control" id="SignUpPassword2" />
+                </div>
+                <button type="button" class="btn btn-primary" onclick="ChackPass()">註冊</button>
+                <button type="button" class="btn btn-primary" onclick="HistoryBack()">回上頁</button>
+            </form>
+        </div>
+        <div class="col-md-3">
         </div>
     </div>
-    <br/>
-    <br/>
+    </div>
 
     <!-- 聯絡資訊 -->
-    <div class="Footer">
+    <div class="Footer fixed-bottom ">
         <div class="Informetion ">
             <h4>聯絡資訊</h4>
             <div>Instagram：<a href="https://www.instagram.com/z851772198/ " target="_blank ">Amy</a>、
@@ -125,9 +122,46 @@
         </div>
     </div>
 </body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./js/Common.js" charset="UTF-8"></script>
+<script>
+    function ChackPass() {
+        let NickName = $("#NickName").val();
+        let SignUpAccount = $("#SignUpAccount").val();
+        let SignUpPassword1 = $("#SignUpPassword1").val();
+        let SignUpPassword2 = $("#SignUpPassword2").val();
+        if (NickName == "" || SignUpAccount == "" || SignUpPassword1 == "") {
+            alert("有資料尚未填入");
+        } else if (SignUpPassword1 !== SignUpPassword2) {
+            alert("密碼不同，請重新輸入。");
+        } else {
+            $.ajax({
+                url: "http://localhost:57799/api/MemberAPI/Register",
+                type: "post",
+                data: {
+                    "NickName": NickName,
+                    "Account": SignUpAccount,
+                    "Password": SignUpPassword1
+                },
+                dataType: "json",
+                success: function(data) {
+                    if (data.IsSuccess) {
+                        alert("註冊成功");
+                        location.href = "./HomePage.html";
+                    } else {
+                        alert(data.ErrorMsg);
+                    }
+                },
+                error: function(error) {
+                    alert("呼叫失敗");
+                    console.log("error");
+                }
+            })
+        }
+    }
+</script>
 
 </html>

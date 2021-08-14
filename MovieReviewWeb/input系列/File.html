@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File</title>
+</head>
+
+<body>
+    <label for="SendFile">圖片上傳:</label>
+    <input type="text" placeholder="僅限.png檔" disabled><br/>
+    <input type="file" id="ImgFile" name="Files" value="File1" accept=".png">
+    <div>
+        <input type="button" onclick="SendFile()" value="上傳">
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script>
+        function SendFile() {
+            var fileData = $("ImgFile").prop('file')[0]; //取得上傳檔案屬性
+            var formData = new FormData;
+            formData.append("Img", fileData);
+            formData.append("file1", $("#ImgFile"), val());
+            $.ajax({
+                url: "",
+                type: "post",
+                dataType: "formData",
+                fileData: false,
+                formData: false,
+                success: function() {
+
+                },
+                error: function() {
+
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

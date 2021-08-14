@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="QForm-Wrap" id="QFormBContainer" name="QFormContainer">
+        <span style="display:none" id="StatusB">Edit</span>
+        <form method="post" enctype="multipart/form-data" role="form" class="Q-Form form-horizontal form-label-left" id="QFormB" name="QForm">
+            <fieldset>
+                <div class="QForm Layer2">
+                    <h4>與時間相關的問題</h4>
+                    <div class="Layer3">
+                        <input type="text" class="fa" id="inputtext" placeholder="輸入任何值">
+                        <div class="Layer4 QForm-Table-Wrap">
+                            <div class="refuseQ">
+                                <div class="Layer5">
+                                    <div class="Layer6 ui-Eq-2" id="B1_1">
+                                        <h5>得分</h5>
+                                        <div class="radio-item">
+                                            <input data-value="0" type="radio" checkselect="N" id="B1_1_0" name="B1_1" value="0">
+                                            <label for="B1_1_0">0</label>
+                                            <span style="display:none" name="opScore">0</span>
+                                        </div>
+                                        <div class="radio-item">
+                                            <input data-value="1" type="radio" checkselect="N" id="B1_1_1" name="B1_1" value="1">
+                                            <label for="B1_1_1">1</label>
+                                            <span style="display:none" name="opScore">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Layer5">
+                                    <h5>一年中的幾月</h5>
+                                    <div class="Layer6 ui-Eq-2" id="B1_3">
+                                        <h5>得分</h5>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B1_3_0" name="B1_3" value="0">
+                                            <label for="B1_3_0">0</label>
+                                            <span style="display:none" name="opScore">0</span>
+                                        </div>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B1_3_1" name="B1_3" value="1">
+                                            <label for="B1_3_1">1</label>
+                                            <span style="display:none" name="opScore">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Layer5">
+                                    <h5>一周的星期幾</h5>
+                                    <div class="Layer6 ui-Eq-2" id="B1_4">
+                                        <h5>得分</h5>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B1_4_0" name="B1_4" value="0">
+                                            <label for="B1_4_0">0</label>
+                                            <span style="display:none" name="opScore">0</span>
+                                        </div>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B1_4_1" name="B1_4" value="1">
+                                            <label for="B1_4_1">1</label>
+                                            <span style="display:none" name="opScore">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Layer5">
+                                    <h5>今天是幾號</h5>
+                                    <div class="Layer6 ui-Eq-2" id="B1_5">
+                                        <h5>得分</h5>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B1_5_0" name="B1_5" value="0">
+                                            <label for="B1_5_0">0</label>
+                                            <span style="display:none" name="opScore">0</span>
+                                        </div>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B1_5_1" name="B1_5" value="1">
+                                            <label for="B1_5_1">1</label>
+                                            <span style="display:none" name="opScore">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Layer4 QForm-Table-Wrap ui-Eq-2">
+                            <h5>其他</h5>
+                            <div class="radio-item refuse">
+                                <input type="radio" checkselect="N" id="B1_0_9" name="B1_0" value="9">
+                                <label for="B1_0_9">拒答</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="QForm Layer2">
+                    <div class="QIndex" id="B2">B2</div>
+                    <div class="QMark">
+                        <span>0</span>
+                    </div>
+                    <h4>與地點相關的問題</h4>
+                    <div class="Layer3">
+                        <h5>
+                            <strong>您現在在哪裡？是在...</strong>
+                        </h5>
+                        <div class="Layer4 QForm-Table-Wrap">
+                            <div class="refuseQ">
+                                <div class="Layer5">
+                                    <h5>什麼縣市</h5>
+                                    <div class="Layer6 ui-Eq-2">
+                                        <h5>得分</h5>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B2_1_0" name="B2_1" value="0">
+                                            <label for="B2_1_0">0</label>
+                                            <span style="display:none" name="opScore">0</span>
+                                        </div>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B2_1_1" name="B2_1" value="1">
+                                            <label for="B2_1_1">1</label>
+                                            <span style="display:none" name="opScore">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Layer5">
+                                    <h5>什麼路/街/村里</h5>
+                                    <div class="Layer6 ui-Eq-2">
+                                        <h5>得分</h5>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B2_3_0" name="B2_3" value="0">
+                                            <label for="B2_3_0">0</label>
+                                            <span style="display:none" name="opScore">0</span>
+                                        </div>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B2_3_1" name="B2_3" value="1">
+                                            <label for="B2_3_1">1</label>
+                                            <span style="display:none" name="opScore">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Layer5">
+                                    <h5>現在在幾樓</h5>
+                                    <div class="Layer6 ui-Eq-2">
+                                        <h5>得分</h5>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B2_5_0" name="B2_5" value="0">
+                                            <label for="B2_5_0">0</label>
+                                            <span style="display:none" name="opScore">0</span>
+                                        </div>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B2_5_1" name="B2_5" value="1">
+                                            <label for="B2_5_1">1</label>
+                                            <span style="display:none" name="opScore">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Layer4 QForm-Table-Wrap ui-Eq-2">
+                            <h5>其他</h5>
+                            <div class="radio-item refuse">
+                                <input type="radio" checkselect="N" id="B2_0_9" name="B2_0" value="9">
+                                <label for="B2_0_9">拒答</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="QForm Layer2">
+                    <div class="QIndex" id="B3">B3</div>
+                    <div class="QMark">
+                        <span>0</span>
+                    </div>
+                    <h4>熟記</h4>
+                    <div class="Layer3">
+                        <h5>
+                            <strong>仔細聽好，我將說出三個名詞。您必須在我說完之後把他們再說出來。準備好了嗎？</strong>
+                        </h5>
+                    </div>
+                    <div class="Layer3">
+                        <h5>
+                            <strong>請記住這些名詞。幾分鐘後我會再請您將他們再說一遍。</strong>
+                        </h5>
+                    </div>
+                    <div class="Layer3">
+                        <h5>
+                            <strong>開始了…剪刀 火車 石頭。現在對我重複說出這幾個名詞</strong>
+                        </h5>
+                        <div class="Layer4 QForm-Table-Wrap">
+                            <div class="refuseQ">
+                                <div class="Layer5">
+                                    <h5>剪刀</h5>
+                                    <div class="Layer6 ui-Eq-2">
+                                        <h5>得分</h5>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B3_1_0" name="B3_1" value="0">
+                                            <label for="B3_1_0">0</label>
+                                            <span style="display:none" name="opScore">0</span>
+                                        </div>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B3_1_1" name="B3_1" value="1">
+                                            <label for="B3_1_1">1</label>
+                                            <span style="display:none" name="opScore">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Layer5">
+                                    <h5>火車</h5>
+                                    <div class="Layer6 ui-Eq-2">
+                                        <h5>得分</h5>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B3_3_0" name="B3_3" value="0">
+                                            <label for="B3_3_0">0</label>
+                                            <span style="display:none" name="opScore">0</span>
+                                        </div>
+                                        <div class="radio-item">
+                                            <input type="radio" checkselect="N" id="B3_3_1" name="B3_3" value="1">
+                                            <label for="B3_3_1">1</label>
+                                            <span style="display:none" name="opScore">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Layer4 QForm-Table-Wrap ui-Eq-2">
+                            <h5>其他</h5>
+                            <div class="radio-item refuse">
+                                <input type="radio" checkselect="N" id="B3_0_9 name=" B3_0 " value="9 ">
+                                <label for="B3_0_9 ">拒答</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="QForm Layer2 ">
+                    <div class="QIndex " id="B4 ">B4</div>
+                    <div class="QMark ">
+                        <span>0</span>
+                    </div>
+                    <h4>注意力和計算能力﹝連續減7﹞</h4>
+                    <div class="Layer3 ">
+                        <h5>
+                            <strong>現在我要您從100減去7，然後將每個答案再繼續減7，直到我告訴您停下來為止。</strong>
+                        </h5>
+                        <div class="Layer4 QForm-Table-Wrap ">
+                            <div class="refuseQ ">
+                                <div class="Layer5 ">
+                                    <h5>100減去7等於多少？</h5>
+                                    <div class="Layer6 ui-Eq-2 ">
+                                        <h5>得分</h5>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B4_1_0 " name="B4_1 " value="0 ">
+                                            <label for="B4_1_0 ">0</label>
+                                            <span style="display:none " name="opScore ">0</span>
+                                        </div>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B4_1_1 " name="B4_1 " value="1 ">
+                                            <label for="B4_1_1 ">1</label>
+                                            <span style="display:none " name="opScore ">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Layer5 ">
+                                    <h5>再減7</h5>
+                                    <div class="Layer6 ui-Eq-2 ">
+                                        <h5>得分</h5>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B4_2_0 " name="B4_2 " value="0 ">
+                                            <label for="B4_2_0 ">0</label>
+                                            <span style="display:none " name="opScore ">0</span>
+                                        </div>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B4_2_1 " name="B4_2 " value="1 ">
+                                            <label for="B4_2_1 ">1</label>
+                                            <span style="display:none " name="opScore ">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Layer5 ">
+                                    <h5>再減7</h5>
+                                    <div class="Layer6 ui-Eq-2 ">
+                                        <h5>得分</h5>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B4_5_0 " name="B4_5 " value="0 ">
+                                            <label for="B4_5_0 ">0</label>
+                                            <span style="display:none " name="opScore ">0</span>
+                                        </div>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B4_5_1 " name="B4_5 " value="1 ">
+                                            <label for="B4_5_1 ">1</label>
+                                            <span style="display:none " name="opScore ">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Layer4 QForm-Table-Wrap ui-Eq-2 ">
+                            <h5>其他</h5>
+                            <div class="radio-item refuse ">
+                                <input type="radio " checkselect="N " id="B4_0_9 " name="B4_0 " value="0 ">
+                                <label for="B4_0_9 ">拒答</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="QForm Layer2 ">
+                    <div class="QIndex " id="B5 ">B5</div>
+                    <div class="QMark ">
+                        <span>0</span>
+                    </div>
+                    <h4>記憶力</h4>
+                    <div class="Layer3 ">
+                        <h5>
+                            <strong>我剛剛請您記住的三個名詞是什麼？﹝不得給任何提示﹞</strong>
+                        </h5>
+                        <div class="Layer4 QForm-Table-Wrap ">
+                            <div class="refuseQ ">
+                                <div class="Layer5 ">
+                                    <div class="Layer6 ui-Eq-2 ">
+                                        <h5>得分</h5>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B5_1_0 " name="B5_1 " value="0 ">
+                                            <label for="B5_1_0 ">0</label>
+                                            <span style="display:none " name="opScore ">0</span>
+                                        </div>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B5_1_1 " name="B5_1 " value="1 ">
+                                            <label for="B5_1_1 ">1</label>
+                                            <span style="display:none " name="opScore ">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Layer5 ">
+                                    <div class="Layer6 ui-Eq-2 ">
+                                        <h5>得分</h5>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B5_2_0 " name="B5_2 " value="0 ">
+                                            <label for="B5_2_0 ">0</label>
+                                            <span style="display:none " name="opScore ">0</span>
+                                        </div>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B5_2_1 " name="B5_2 " value="1 ">
+                                            <label for="B5_2_1 ">1</label>
+                                            <span style="display:none " name="opScore ">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Layer5 ">
+                                    <div class="Layer6 ui-Eq-2 ">
+                                        <h5>得分</h5>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B5_3_0 " name="B5_3 " value="0 ">
+                                            <label for="B5_3_0 ">0</label>
+                                            <span style="display:none " name="opScore ">0</span>
+                                        </div>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B5_3_1 " name="B5_3 " value="1 ">
+                                            <label for="B5_3_1 ">1</label>
+                                            <span style="display:none " name="opScore ">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Layer4 QForm-Table-Wrap ui-Eq-2 ">
+                            <h5>其他</h5>
+                            <div class="radio-item refuse ">
+                                <input type="radio " checkselect="N " id="B5_0_9 " name="B5_0 " value="9 ">
+                                <label for="B5_0_9 ">拒答</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="QForm Layer2 ">
+                    <div class="QIndex " id="B6 ">B6</div>
+                    <div class="QMark ">
+                        <span>0</span>
+                    </div>
+                    <h4>名稱* (可以用其他常用物品取代)</h4>
+                    <div class="Layer3 ">
+                        <h5>
+                            <strong>這是什麼？</strong>
+                        </h5>
+                        <div class="Layer4 QForm-Table-Wrap ">
+                            <div class="refuseQ ">
+                                <div class="Layer5 ">
+                                    <h5>﹝指著一支鉛筆或原子筆﹞</h5>
+                                    <div class="Layer6 ui-Eq-2 ">
+                                        <h5>得分</h5>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B6_1_0 " name="B6_1 " value="0 ">
+                                            <label for="B6_1_0 ">0</label>
+                                            <span style="display:none " name="opScore ">0</span>
+                                        </div>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B6_1_1 " name="B6_1 " value="1 ">
+                                            <label for="B6_1_1 ">1</label>
+                                            <span style="display:none " name="opScore ">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Layer5 ">
+                                    <h5>﹝指著一隻手錶﹞</h5>
+                                    <div class="Layer6 ui-Eq-2 ">
+                                        <h5>得分</h5>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B6_2_0 " name="B6_2 " value="0 ">
+                                            <label for="B6_2_0 ">0</label>
+                                            <span style="display:none " name="opScore ">0</span>
+                                        </div>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B6_2_1 " name="B6_2 " value="1 ">
+                                            <label for="B6_2_1 ">1</label>
+                                            <span style="display:none " name="opScore ">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Layer4 QForm-Table-Wrap ui-Eq-2 ">
+                            <h5>其他</h5>
+                            <div class="radio-item refuse ">
+                                <input type="radio " checkselect="N " id="B6_0_9 " name="B6_0 " value="9 ">
+                                <label for="B6_0_9 ">拒答</label>
+                            </div>
+                            <div class="radio-item refuse ">
+                                <input type="radio " checkselect="N " id="B6_0_6 " name="B6_0 " value="6 ">
+                                <label for="B6_0_6 ">失明</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="QForm Layer2 ">
+                    <div class="QIndex " id="B7 ">B7</div>
+                    <div class="QMark ">
+                        <span>0</span>
+                    </div>
+                    <h4>複述</h4>
+                    <div class="Layer3 ">
+                        <h5>
+                            <strong>現在我要請您重複我所說的話。準備好了嗎？「台語：有來無趣真趣味」或「客語：有來無趣真聲色(趣)」或「國語：有往吳來不自在」現在由您來說這句話</strong>
+                        </h5>
+                        <div class="Layer4 QForm-Table-Wrap ">
+                            <div class="refuseQ ">
+                                <div class="Layer5 ">
+                                    <div class="Layer6 ui-Eq-2 ">
+                                        <h5>得分</h5>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B7_0 " name="B7 " value="0 ">
+                                            <label for="B7_0 ">0</label>
+                                            <span style="display:none " name="opScore ">0</span>
+                                        </div>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B7_1 " name="B7 " value="1 ">
+                                            <label for="B7_1 ">1</label>
+                                            <span style="display:none " name="opScore ">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Layer4 QForm-Table-Wrap ui-Eq-2 ">
+                            <h5>其他</h5>
+                            <div class="radio-item refuse ">
+                                <input type="radio " checkselect="N " id="B7_9 " name="B7 " value="9 ">
+                                <label for="B7_9 ">拒答</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="QForm Layer2 ">
+                    <div class="QIndex " id="B10 ">B10</div>
+                    <div class="QMark ">
+                        <span>0</span>
+                    </div>
+                    <h4>書寫</h4>
+                    <div class="Layer3 ">
+                        <h5>
+                            <strong>請寫出一個句子。</strong>
+                        </h5>
+                        <div class="Layer4 QForm-Table-Wrap ">
+                            <div class="refuseQ ">
+                                <div class="Layer5 ">
+                                    <h5>﹝若受試者沒有反應，則說：比如妳可以寫句子形容今天的天氣﹞ 將空白紙張放在受試者面前，並提供原子筆或鉛筆。若句子可以理解，且含有主詞和動詞，就得 1 分。忽略文法錯誤或錯別字。</h5>
+                                    <div class="Layer6 ui-Eq-2 ">
+                                        <h5>得分</h5>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B10_0 " name="B10 " value="0 ">
+                                            <label for="B10_0 ">0</label>
+                                            <span style="display:none " name="opScore ">0</span>
+                                        </div>
+                                        <div class="radio-item ">
+                                            <input type="radio " checkselect="N " id="B10_1 " name="B10 " value="1 ">
+                                            <label for="B10_1 ">1</label>
+                                            <span style="display:none " name="opScore ">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" ">
+                            <h5>其他</h5>
+                            <div>
+                                <input type="checkbox " class="checkTest ">失明
+                            </div>
+                            <div class=" ">
+                                <input type="checkbox "  id="B10_6 " name="B10 " value="6 ">
+                                <label for="B10_6 ">失明</label>
+                            </div>
+                            <div class=" ">
+                                <input type="checkbox "  id="B10_7 " name="B10 " value="7 ">
+                                <label for="B10_7 ">上肢功能障礙</label>
+                            </div>
+                            <div class=" ">
+                                <input type="checkbox "  id="B10_8 " name="B10 " value="8 ">
+                                <label for="B10_8 ">不識字</label>
+                            </div>
+                            <div class=" ">
+                                <input type="checkbox "  id="B10_9 " name="B10 " value="9 ">
+                                <label for="B10_9 ">拒答</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Layer4 QForm_Table_Wrap ui-Eq-2 ">
+                    <h5>a.過去一年，您做的是哪一種運動?</h5>
+                    <div class="select-item ">
+                        <select id="I1_1A_1 "><option value=" "></option><option value="0 ">散步</option><option value="1 ">慢跑</option><option value="2 ">健走</option><option value="3 ">跳繩</option><option value="4 ">游泳</option><option value="5
+                                    ">體操(只有做到肢體伸展的體操)</option><option value="6 ">甩手運動</option><option value="7 ">瑜珈</option><option value="8 ">外丹功</option><option value="9 ">內丹功</option><option value="10 ">法輪功</option><option value="11 ">元極舞</option><option value="12
+                                    ">太極拳</option><option value="13 ">香功</option><option value="14 ">其他氣功【請寫出】</option><option value="15 ">足球</option><option value="16 ">高爾夫球</option><option value="17 ">羽毛球</option><option value="18 ">桌球</option><option value="19
+                                    ">槌球</option><option value="20 ">網球</option><option value="21 ">撞球</option><option value="22 ">籃球</option><option value="23 ">其他球類運動【請寫出】</option><option value="24 ">有氧舞蹈、跳舞機</option><option value="25 ">土風舞國際標準舞</option><option value="26
+                                    ">騎單車(或腳踏車)</option><option value="27 ">爬山</option><option value="28 ">重量訓練(如：舉重、包括健身房的舉重機)</option><option value="29 ">爬樓梯</option><option value="30 ">搖呼拉圈</option><option value="31 ">其他【請寫出】</option></select>
+                        <div class="switchQ Layer5 ui-Eq-2 " style="display:none ">
+                            <div class="input-item ">
+                                <input type="text " class="fa " id="I1_1A_1_1 " placeholder=" ">
+                            </div>
+                        </div>
+                        <div class="switchQ Layer5 ui-Eq-2 " style="display:none ">
+                            <div class="input-item ">
+                                <input type="text " class="fa " id="I_1_1_1_24_2_1_1 " placeholder=" ">
+                            </div>
+                        </div>
+                        <div class="switchQ Layer5 ui-Eq-2 " style="display:none ">
+                            <div class="input-item ">
+                                <input type="text " class="fa " id="I_1_1_1_32_3_1_1 " placeholder=" ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        
+        <button type="button " onclick="getAllInputValue() " class="btn btn-primary reset "> 取得三個題型的val值</button>
+        <button type="button " onclick="allInputDisabled() " class="btn btn-danger reset "> 允許/禁止 修改</button>
+        <div class="input-item ">
+            <input type="text " class="fa " id="textval " placeholder="輸出text ">
+        </div>
+        <div class="input-item ">
+            <input type="text " class="fa " id="radioval " placeholder="輸出radio ">
+        </div>
+        <div class="input-item ">
+            <input type="text " class="fa " id="selectval " placeholder="輸出select ">
+        </div>
+    </div>
+    
+    <!-- @section scripts
+    {
+        <script src="~/Scripts/jquery-3.3.1.js "></script>
+        @*這裡下取值的語法*@
+        @*1.當按鈕被點擊，我需要那三個題型的val值，並顯示在上方的三個textbox內。
+          2.按下按鈕將所有的題目都禁止讓使用者再修改。*@
+        <script>
+            //取得三個題型的val值
+            function getAllInputValue() {
+                $("#textval ").val($("#inputtext ").val());
+                $("#radioval ").val($("input[name='B1_1' ]:checked ").val());
+                $("#selectval ").val($("#I1_1A_1 ").val());
+            }
+    
+            //禁止修改
+            function allInputDisabled() {
+                if ($("#inputtext ").prop("disabled "))
+                    $("input, select, radio ").prop("disabled ", false);
+                else
+                    $("input, select, radio ").prop("disabled ", true);
+            }
+        </script>
+    } -->
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js " integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut " crossorigin="anonymous "></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js " integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k " crossorigin="anonymous "></script>
+<script type="text/javascript " src="./js/Common.js " charset="UTF-8 "></script>
+
+</html>
