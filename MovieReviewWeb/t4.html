@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>電影搜尋</th>
+                <th>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="text" />
+                        <button class="btn btn-primary my-2 my-sm-0" type="submit">搜索</button>
+                    </form>
+                </th>
+                <th>
+                    <div id="card-360709">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-360709" href="#card-element-498646">進階搜尋</a>
+                            </div>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>分類
+                    <td>
+                        <td>
+                            <input type="checkbox" id="Action" name="MovieItems" value="Action">
+                            <label for="Action">動作</label>
+                            <input type="checkbox" id="Horror" name="MovieItems" value="Horror">
+                            <label for="Horror">驚悚</label>
+                            <input type="checkbox" id="Fantasy" name="MovieItems" value="Fantasy">
+                            <label for="Fantasy">奇幻</label>
+                            <input type="checkbox" id="Love" name="MovieItems" value="Love">
+                            <label for="Love">愛情</label>
+                            <input type="checkbox" id="Funny" name="MovieItems" value="Funny">
+                            <label for="Funny">搞笑</label>
+                        </td>
+            </tr>
+            <tr>
+                <td>上映時間</td>
+                <td><input type="date" name="MovieDate" id="MovieDate" class="form-control" required="required"></td>
+            </tr>
+            <tr>
+                <td>推薦分數</td>
+                <td><input type="text" accept="Int" id="ReviewScore" name="ReviewScore"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

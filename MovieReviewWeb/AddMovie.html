@@ -84,10 +84,10 @@
                 <td>
                     <input type="checkbox" id="Action" name="MovieItems" value="Action">
                     <label for="Action">動作</label>
-                    <input type="checkbox" id="Scare" name="MovieItems" value="Scare">
-                    <label for="Scare">驚悚</label>
-                    <input type="checkbox" id="Action" name="MovieItems" value="Action">
-                    <label for="Action">奇幻</label>
+                    <input type="checkbox" id="Horror" name="MovieItems" value="Horror">
+                    <label for="Horror">驚悚</label>
+                    <input type="checkbox" id="Fantasy" name="MovieItems" value="Fantasy">
+                    <label for="Fantasy">奇幻</label>
                     <input type="checkbox" id="Love" name="MovieItems" value="Love">
                     <label for="Love">愛情</label>
                     <input type="checkbox" id="Funny" name="MovieItems" value="Funny">
@@ -96,19 +96,19 @@
             </tr>
             <tr>
                 <td>電影名稱</td>
-                <td class="text-left"><input type="text" id="Movie1" name="MovieName" placeholder="電影名稱"></td>
+                <td class="text-left"><input type="text" name="MovieName" placeholder="電影名稱"></td>
             </tr>
             <tr>
                 <td>圖片上傳</td>
-                <td><input type="file" accept=".png .jpg"></td>
+                <td><input type="file" id="ImgFile" accept=".png .jpg"></td>
             </tr>
             <tr>
                 <td>電影描述</td>
-                <td><textarea name="MovieFace" id="MovieFace" cols="30" rows="10" placeholder="請輸入電影內容大綱..."></textarea></td>
+                <td><textarea name="MovieIntroduce" cols="30" rows="10" placeholder="請輸入電影內容大綱..."></textarea></td>
             </tr>
             <tr>
                 <td>上映時間</td>
-                <td><input type="date" name="MovieDate" id="MovieDate" class="form-control" value="" required="required" title=""></td>
+                <td><input type="date" name="MovieDate" id="MovieDate" class="form-control" required="required"></td>
             </tr>
         </table>
         <input type="button" onclick="AddMovie()" value="新增">
@@ -135,5 +135,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script type="text/javascript" src="./js/Common.js" charset="UTF-8"></script>
+<script>
+    function AddMovie() {
+        let MovieItems = $("input[name='MovieItems']");
+        let MovieName = $("input[name='MovieName']");
+        let MovieIntroduce = $("input[name='MovieIntroduce']");
+        let MovieDate = $("input[name='MovieDate']");
+        let fileData = $("#ImgFile").prop('file')[0]; //取得上傳檔案屬性
+        let formData = new FormData;
+        formData.append("Img", fileData);
+        formData.append("file1", $("#ImgFile"), val());
+        $.ajax({
+            url: "",
+            type: "post",
+            dataType: "json",
+            dataType: "formData",
+            fileData: false,
+            formData: false,
+            data: {
+
+            },
+            success: function(data) {
+
+            },
+            error: function(error) {
+
+            }
+        })
+    }
+</script>
 
 </html>

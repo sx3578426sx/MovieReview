@@ -79,9 +79,22 @@
     <div class="row">
         <div class="col-3"></div>
         <div class="col-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜尋條件</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content collapse">
+                    //這裡的元件都會收合 看不見
+                </div>
+            </div>
             <table class="table table-bordered">
                 <thead>
-                    <tr>
+                    <tr class="ibox-title">
                         <th>電影搜尋</th>
                         <th>
                             <form class="form-inline">
@@ -98,7 +111,7 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody id="card-element-581520" class="collapse">
+                <tbody id="card-element-581520" class="ibox-content collapse">
                     <tr class="card-body">
                         <td>分類</td>
                         <td>
@@ -114,11 +127,11 @@
                             <label for="Funny">搞笑</label>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="card-body">
                         <td>上映時間</td>
                         <td><input type="date" name="MovieDate" id="MovieDate" class="form-control" required="required"></td>
                     </tr>
-                    <tr>
+                    <tr class="card-body">
                         <td>推薦分數</td>
                         <td><input type="text" accept="Int" id="ReviewScore" name="ReviewScore"></td>
                     </tr>
@@ -148,5 +161,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js " integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut " crossorigin="anonymous "></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js " integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k " crossorigin="anonymous "></script>
 <script type="text/javascript " src="./js/Common.js " charset="UTF-8 "></script>
+<script>
+    $(".ibox-title").on("click", function() {
+        var isCollapse = $(".ibox-content").hasClass("collapse"); //判斷是否已收合
+
+        if (isCollapse) {
+            $(".card-body").removeClass("collapse"); // 展開
+        } else {
+            $(".card-body").addClass("collapse"); // 收合
+        }
+    });
+</script>
 
 </html>
