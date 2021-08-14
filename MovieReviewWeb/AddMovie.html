@@ -82,34 +82,41 @@
             <tr>
                 <td>分類</td>
                 <td>
-                    <input type="checkbox" class="MovieClass">動作</input>
-                    <input type="checkbox" class="MovieClass">驚悚</input>
-                    <input type="checkbox" class="MovieClass">奇幻</input>
-                    <input type="checkbox" class="MovieClass">愛情</input>
-                    <input type="checkbox" class="MovieClass">搞笑</input>
+                    <input type="checkbox" id="Action" name="MovieItems" value="Action">
+                    <label for="Action">動作</label>
+                    <input type="checkbox" id="Scare" name="MovieItems" value="Scare">
+                    <label for="Scare">驚悚</label>
+                    <input type="checkbox" id="Action" name="MovieItems" value="Action">
+                    <label for="Action">奇幻</label>
+                    <input type="checkbox" id="Love" name="MovieItems" value="Love">
+                    <label for="Love">愛情</label>
+                    <input type="checkbox" id="Funny" name="MovieItems" value="Funny">
+                    <label for="Funny">搞笑</label>
                 </td>
             </tr>
             <tr>
                 <td>電影名稱</td>
-                <td><input type="text" /></td>
+                <td class="text-left"><input type="text" id="Movie1" name="MovieName" placeholder="電影名稱"></td>
             </tr>
             <tr>
                 <td>圖片上傳</td>
-                <td><input type="file"></td>
+                <td><input type="file" accept=".png .jpg"></td>
             </tr>
             <tr>
                 <td>電影描述</td>
-                <td><textarea></textarea></td>
+                <td><textarea name="MovieFace" id="MovieFace" cols="30" rows="10" placeholder="請輸入電影內容大綱..."></textarea></td>
             </tr>
             <tr>
                 <td>上映時間</td>
-                <td><input type="date" /></td>
+                <td><input type="date" name="MovieDate" id="MovieDate" class="form-control" value="" required="required" title=""></td>
             </tr>
         </table>
+        <input type="button" onclick="AddMovie()" value="新增">
+        <input type="button" onclick="ClearData()" value="重填">
     </div>
 
     <!-- 聯絡資訊 -->
-    <div class="Footer fixed-bottom ">
+    <div class="Footer">
         <div class="Informetion ">
             <h4>聯絡資訊</h4>
             <div>Instagram：<a href="https://www.instagram.com/z851772198/ " target="_blank ">Amy</a>、
