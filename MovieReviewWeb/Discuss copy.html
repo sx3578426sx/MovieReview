@@ -77,43 +77,27 @@
     <br/>
     <!-- 網頁內容 -->
     <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>搜尋條件</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-down"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="ibox-content collapse">
-                    //這裡的元件都會收合 看不見
-                </div>
-            </div>
+        <div class="col-4"></div>
+        <div class="col-4">
             <table class="table table-bordered">
                 <thead>
-                    <tr class="ibox-title">
+                    <tr>
                         <th>電影搜尋</th>
                         <th>
                             <form class="form-inline">
                                 <input class="form-control mr-sm-2" type="text" />
                                 <button class="btn btn-primary my-2 my-sm-0" type="submit">搜索</button>
+                                <span id="card-379387" class="ml-3">
+                                    <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-379387" href="#card-element-581520">進階搜尋</a>
+                                </span>
                             </form>
-                        </th>
-                        <th>
-                            <div id="card-379387">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link collapsed" data-toggle="collapse" data-parent="#card-379387" href="#card-element-581520">進階搜尋</a>
-                                    </div>
+
                         </th>
                     </tr>
                 </thead>
-                <tbody id="card-element-581520" class="ibox-content collapse">
+                <tbody id="card-element-581520" class="collapse">
                     <tr class="card-body">
-                        <td>分類</td>
+                        <td>分　　類</td>
                         <td>
                             <input type="checkbox" id="Action" name="MovieItems" value="Action">
                             <label for="Action">動作</label>
@@ -127,50 +111,145 @@
                             <label for="Funny">搞笑</label>
                         </td>
                     </tr>
-                    <tr class="card-body">
+                    <tr>
                         <td>上映時間</td>
                         <td><input type="date" name="MovieDate" id="MovieDate" class="form-control" required="required"></td>
                     </tr>
-                    <tr class="card-body">
+                    <tr>
                         <td>推薦分數</td>
                         <td><input type="text" accept="Int" id="ReviewScore" name="ReviewScore"></td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="col-4"></div>
+    </div>
+    <div class="fixed-table-toolbar">
+        <div class="columns columns-right btn-group float-right">
+            <div class="keep-open btn-group" title="Columns">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-label="Columns" title="Columns">
+                    <i class="fa fa-th-list"></i>
+                    <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <label class="dropdown-item dropdown-item-marker">
+                        <input type="checkbox" data-field="id" value="1" checked="checked"> 
+                        <span>ID</span>
+                    </label>
+                    <label class="dropdown-item dropdown-item-marker">
+                        <input type="checkbox" data-field="name" value="2" checked="checked"> 
+                        <span>Item Name</span>
+                    </label>
+                    <label class="dropdown-item dropdown-item-marker">
+                        <input type="checkbox" data-field="price" value="3" checked="checked"> 
+                        <span>Item Price</span>
+                    </label>
+                </div>
             </div>
-            <div class="col-3">
+        </div>
+        <div class="float-right search btn-group">
+            <input class="form-control search-input" type="search" placeholder="Search" autocomplete="off">
+        </div>
+    </div>
 
-            </div>
-            <!-- 聯絡資訊 -->
-            <div class="Footer fixed-bottom ">
-                <div class="Informetion ">
-                    <h4>聯絡資訊</h4>
-                    <div>Instagram：<a href="https://www.instagram.com/z851772198/ " target="_blank ">Amy</a>、
-                        <a href="https://www.instagram.com/you_jin_1013/ " target="_blank ">Jones</a></div>
-                    <div>FaceBook：<a href="https://www.facebook.com/profile.php?id=100001411811825 " target="_blank ">Amy</a>、
-                        <a href="https://www.facebook.com/jin.yo.96 " target="_blank ">Jones</a></div>
-                    <div>Github：<a href="https://github.com/sx3578426sx/MovieReview " target="_blank ">MovieReview</a></div>
-                </div>
-                <div class="Informetion ">
-                    <h4>線上回覆時間</h4>
-                    <div> 9:00 ~ 18:00</div>
-                </div>
-            </div>
+    <div class="fixed-table-body">
+        <div class="fixed-table-loading table table-bordered table-hover" style="top: 50.5px;">
+            <span class="loading-wrap">
+            <span class="loading-text" style="font-size: 32px;">Loading, please wait</span>
+                <span class="animation-wrap">
+                    <span class="animation-dot"></span>
+                </span>
+            </span>
+        </div>
+        <table id="table" data-toggle="bootstrap-table" data-show-columns="true" data-multiple-select-row="true" data-click-to-select="true" data-pagination="true" data-search="true" data-url="https://examples.wenzhixin.net.cn/examples/bootstrap_table/data" data-side-pagination="server" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="bs-checkbox " style="width: 36px; " data-field="state">
+                        <div class="th-inner ">
+                            <label>
+                                <input name="btSelectAll" type="checkbox">
+                                <span></span>
+                            </label>
+                        </div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th data-field="Sort">
+                        <div class="th-inner sortable both">分類</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th data-field="Date">
+                        <div class="th-inner sortable both">上映時間</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th data-field="Name">
+                        <div class="th-inner sortable both">電影名稱</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th data-field="Score">
+                        <div class="th-inner sortable both">分數</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                    <th data-field="Edit">
+                        <div class="th-inner sortable both">進入評論</div>
+                        <div class="fht-cell"></div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-index="0">
+                    <td class="bs-checkbox " style="width: 36px; ">
+                    <label>
+                        <input data-index="0" name="btSelectItem" type="checkbox">
+                        <span></span>
+                    </label>
+                    </td>
+                    <td>動作</td>
+                    <td>2020/01</td>
+                    <td>Item 0</td>
+                    <td>4.0</td>
+                    <td><button>Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="fixed-table-pagination">
+        <div class="float-left pagination-detail">
+        <span class="pagination-info">Showing 1 to 10 of 800 rows</span>
+        <div class="page-list">
+        <div class="btn-group dropdown dropup">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+            <span class="page-size">10</span>
+            <span class="caret"></span>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item active" href="#">10</a>
+            <a class="dropdown-item " href="#">25</a>
+            <a class="dropdown-item " href="#">50</a>
+            <a class="dropdown-item " href="#">100</a>
+        </div>
+    </div> rows per page</div></div><div class="float-right pagination"><ul class="pagination"><li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li><li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li><li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li><li class="page-item"><a class="page-link" aria-label="to page 3" href="javascript:void(0)">3</a></li><li class="page-item"><a class="page-link" aria-label="to page 4" href="javascript:void(0)">4</a></li><li class="page-item"><a class="page-link" aria-label="to page 5" href="javascript:void(0)">5</a></li><li class="page-item page-last-separator disabled"><a class="page-link" aria-label="" href="javascript:void(0)">...</a></li><li class="page-item"><a class="page-link" aria-label="to page 80" href="javascript:void(0)">80</a></li><li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li></ul></div></div>
+  <pre class="source-pre"><code id="source" class="html"></code></pre>
+    </div>
+
+    <!-- 聯絡資訊 -->
+    <div class="Footer">
+        <div class="Informetion ">
+            <h4>聯絡資訊</h4>
+            <div>Instagram：<a href="https://www.instagram.com/z851772198/ " target="_blank ">Amy</a>、
+                <a href="https://www.instagram.com/you_jin_1013/ " target="_blank ">Jones</a></div>
+            <div>FaceBook：<a href="https://www.facebook.com/profile.php?id=100001411811825 " target="_blank ">Amy</a>、
+                <a href="https://www.facebook.com/jin.yo.96 " target="_blank ">Jones</a></div>
+            <div>Github：<a href="https://github.com/sx3578426sx/MovieReview " target="_blank ">MovieReview</a></div>
+        </div>
+        <div class="Informetion ">
+            <h4>線上回覆時間</h4>
+            <div> 9:00 ~ 18:00</div>
+        </div>
+    </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js " integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut " crossorigin="anonymous "></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js " integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k " crossorigin="anonymous "></script>
 <script type="text/javascript " src="./js/Common.js " charset="UTF-8 "></script>
-<script>
-    $(".ibox-title").on("click", function() {
-        var isCollapse = $(".ibox-content").hasClass("collapse"); //判斷是否已收合
-
-        if (isCollapse) {
-            $(".card-body").removeClass("collapse"); // 展開
-        } else {
-            $(".card-body").addClass("collapse"); // 收合
-        }
-    });
-</script>
 
 </html>
